@@ -1,8 +1,7 @@
-const SCENE = { width: 1800, height: 1320, cardW: 220, cardH: 84 };
+const SCENE = { width: 2000, height: 1540, cardW: 160, cardH: 60 };
 
 const state = {
   data: null,
-  rounds: [],
   scale: 1,
   tx: 0,
   ty: 0,
@@ -15,39 +14,22 @@ const state = {
 };
 
 const CONF = {
-  'very high': 'rgba(121,255,191,.16)',
-  high: 'rgba(4,207,255,.14)',
-  medium: 'rgba(255,200,87,.16)',
-  low: 'rgba(255,113,150,.16)',
-};
-
-const LABELS = {
-  1: 'Round of 64',
-  2: 'Round of 32',
-  3: 'Sweet 16',
-  4: 'Elite Eight',
-  5: 'Final Four',
-  6: 'National Championship',
+  'very high': 'rgba(16, 185, 129, 0.4)',
+  high: 'rgba(59, 130, 246, 0.4)',
+  medium: 'rgba(245, 158, 11, 0.3)',
+  low: 'rgba(244, 63, 94, 0.3)',
 };
 
 const els = {
-  championName: document.getElementById('championName'),
-  gamesCount: document.getElementById('gamesCount'),
-  regionButtons: document.getElementById('regionButtons'),
-  roundButtons: document.getElementById('roundButtons'),
-  championPath: document.getElementById('championPath'),
+  gamesCountText: document.getElementById('gamesCountText'),
   viewport: document.getElementById('viewport'),
   scene: document.getElementById('bracketScene'),
   nodesLayer: document.getElementById('nodesLayer'),
   connectorLayer: document.getElementById('connectorLayer'),
-  viewLabel: document.getElementById('viewLabel'),
   resetViewBtn: document.getElementById('resetViewBtn'),
-  fitChampionBtn: document.getElementById('fitChampionBtn'),
-  fitFinalBtn: document.getElementById('fitFinalBtn'),
-  zoomInBtn: document.getElementById('zoomInBtn'),
-  zoomOutBtn: document.getElementById('zoomOutBtn'),
   detailSheet: document.getElementById('detailSheet'),
   closeDetailBtn: document.getElementById('closeDetailBtn'),
+  closeDetailBackdrop: document.getElementById('closeDetailBackdrop'),
   detailRound: document.getElementById('detailRound'),
   detailMatchup: document.getElementById('detailMatchup'),
   detailWinner: document.getElementById('detailWinner'),
@@ -57,81 +39,26 @@ const els = {
   detailImage: document.getElementById('detailImage'),
   detailTitle: document.getElementById('detailTitle'),
   detailCaption: document.getElementById('detailCaption'),
-  detailReason: document.getElementById('detailReason'),
-  detailSource: document.getElementById('detailSource'),
 };
 
 async function init() {
-  const data = await fetch('./data.json').then((r) => r.json());
-  state.data = data;
-  state.rounds = groupRounds(data.matchups);
-  state.championIds = new Set(
-    data.matchups.filter((m) => m.predicted_winner === data.champion).map((m) => m.id)
-  );
+  try {
+    const data = await fetch('./data.json').then((r) => r.json());
+    state.data = data;
+    state.championIds = new Set(
+      data.matchups.filter((m) => m.predicted_winner === data.champion).map((m) => m.id)
+    );
+    els.gamesCountText.textContent = `${data.total_matchups} Predictions • Champ: ${data.champion}`;
 
-  els.championName.textContent = data.champion;
-  els.gamesCount.textContent = String(data.total_matchups);
-
-  renderRegionButtons();
-  renderRoundButtons();
-  renderChampionPath();
-  renderScene();
-  bindUI();
-  requestAnimationFrame(() => fitFull());
-}
-
-function groupRounds(matchups) {
-  return [...new Set(matchups.map((m) => m.round))]
-    .sort((a, b) => a - b)
-    .map((round) => ({
-      round,
-      name: LABELS[round] || `Round ${round}`,
-      games: matchups.filter((m) => m.round === round),
-    }));
-}
-
-function renderRegionButtons() {
-  const regions = ['East', 'West', 'South', 'Midwest', 'Final Four'];
-  els.regionButtons.innerHTML = '';
-  regions.forEach((region) => {
-    const btn = document.createElement('button');
-    btn.className = 'region-btn';
-    btn.type = 'button';
-    btn.innerHTML = `<strong>${region}</strong><span>focus bracket area</span>`;
-    btn.addEventListener('click', () => focusPreset(region));
-    els.regionButtons.appendChild(btn);
-  });
-}
-
-function renderRoundButtons() {
-  els.roundButtons.innerHTML = '';
-  state.rounds.forEach((round) => {
-    const btn = document.createElement('button');
-    btn.className = 'round-btn';
-    btn.type = 'button';
-    btn.innerHTML = `<strong>${round.name}</strong><span>${round.games.length} games</span>`;
-    btn.addEventListener('click', () => focusRound(round.round));
-    els.roundButtons.appendChild(btn);
-  });
-}
-
-function renderChampionPath() {
-  const path = state.data.matchups
-    .filter((m) => m.predicted_winner === state.data.champion)
-    .sort((a, b) => a.round - b.round);
-
-  els.championPath.innerHTML = '';
-  path.forEach((game) => {
-    const item = document.createElement('button');
-    item.className = 'path-item';
-    item.type = 'button';
-    item.innerHTML = `<strong>${game.round_name}</strong><p>${game.matchup} → <b>${game.predicted_winner}</b> (${pct(game.win_probability)})</p>`;
-    item.addEventListener('click', () => {
-      focusMatchup(game.id);
-      openDetail(game);
-    });
-    els.championPath.appendChild(item);
-  });
+    renderScene();
+    bindUI();
+    
+    // Slight delay for smooth load-in effect
+    requestAnimationFrame(() => fitFull());
+  } catch (error) {
+    console.error('Failed to init app:', error);
+    els.nodesLayer.innerHTML = '<div style="padding:40px;text-align:center;color:#f43f5e">Failed to load bracket data.</div>';
+  }
 }
 
 function renderScene() {
@@ -139,165 +66,183 @@ function renderScene() {
   els.nodesLayer.innerHTML = '';
   renderConnectorDefs();
 
+  // Draw Regions Labels
   const labels = [
-    ['East', 76, 30],
-    ['West', 1512, 30],
-    ['South', 76, 710],
-    ['Midwest', 1468, 710],
-    ['Final Four', 812, 28],
+    { text: 'East', x: 40, y: 20 },
+    { text: 'West', x: 40, y: 780 },
+    { text: 'South', x: 1780, y: 20 },
+    { text: 'Midwest', x: 1730, y: 780 },
+    { text: 'Final Four', x: 880, y: 400 },
   ];
-
-  labels.forEach(([text, x, y]) => {
-    const el = document.createElement('button');
-    el.type = 'button';
+  labels.forEach(({text, x, y}) => {
+    const el = document.createElement('div');
     el.className = 'region-label';
     el.style.left = `${x}px`;
     el.style.top = `${y}px`;
     el.textContent = text;
-    el.addEventListener('click', () => focusPreset(text));
     els.nodesLayer.appendChild(el);
   });
 
-  renderRegion('East', 'left', 92);
-  renderRegion('West', 'right', 92);
-  renderRegion('South', 'left', 770);
-  renderRegion('Midwest', 'right', 770);
-  renderFinalRounds();
+  // Build symmetrical bracket
+  renderRegion('East', 'left', 100);
+  renderRegion('West', 'left', 860);
+  renderRegion('South', 'right', 100);
+  renderRegion('Midwest', 'right', 860);
+  
+  // Final Four and Championship
+  renderFinals();
 }
 
-function renderRegion(division, side, yBase) {
-  const xCols = side === 'left' ? [58, 334, 612, 838] : [1522, 1246, 968, 742];
-  const round1 = state.data.matchups.filter((m) => m.division === division && m.round === 1);
-  const round2 = state.data.matchups.filter((m) => m.division === division && m.round === 2);
-  const round3 = state.data.matchups.filter((m) => m.division === division && m.round === 3);
-  const round4 = state.data.matchups.filter((m) => m.division === division && m.round === 4);
-  const rounds = [round1, round2, round3, round4];
-  const prevIds = [];
-
-  round1.forEach((game, index) => {
-    const x = xCols[0];
-    const y = yBase + index * 76;
+function renderRegion(division, side, yOffset) {
+  const xCoords = side === 'left' ? [40, 240, 440, 640] : [1800, 1600, 1400, 1200];
+  const rounds = [1, 2, 3, 4].map(r => state.data.matchups.filter(m => m.division === division && m.round === r));
+  
+  let prevIds = [];
+  
+  // Round 1
+  rounds[0].forEach((game, index) => {
+    const x = xCoords[0];
+    const y = yOffset + (index * 84); // 84px spacing
     placeNode(game, x, y);
     prevIds.push(game.id);
   });
 
-  for (let roundIndex = 1; roundIndex < rounds.length; roundIndex += 1) {
-    const games = rounds[roundIndex];
+  // Round 2, 3, 4
+  for (let r = 1; r < rounds.length; r++) {
     const currentIds = [];
-    games.forEach((game, index) => {
+    rounds[r].forEach((game, index) => {
       const sourceA = state.nodes.get(prevIds[index * 2]);
       const sourceB = state.nodes.get(prevIds[index * 2 + 1]);
-      const x = xCols[roundIndex];
-      const y = ((sourceA.y + sourceB.y) / 2);
+      const x = xCoords[r];
+      // Y is centered between the two parents
+      const y = (sourceA.y + sourceB.y) / 2;
       placeNode(game, x, y);
-      connectNodes(sourceA, state.nodes.get(game.id), game.id);
-      connectNodes(sourceB, state.nodes.get(game.id), game.id);
+      connect(sourceA, state.nodes.get(game.id), game.id);
+      connect(sourceB, state.nodes.get(game.id), game.id);
       currentIds.push(game.id);
     });
-    prevIds.length = 0;
-    prevIds.push(...currentIds);
+    prevIds = currentIds;
   }
 }
 
-function renderFinalRounds() {
-  const finalFour = state.data.matchups.filter((m) => m.round === 5);
-  const title = state.data.matchups.find((m) => m.round === 6);
+function renderFinals() {
+  const ffGames = state.data.matchups.filter((m) => m.round === 5);
+  const titleGame = state.data.matchups.find((m) => m.round === 6);
+  
+  if (!ffGames.length || !titleGame) return;
 
-  placeNode(finalFour[0], 790, 448);
-  placeNode(finalFour[1], 790, 792);
-  placeNode(title, 790, 620, true);
+  // Final Four connections (Left side champion vs Right side champion usually)
+  // East + West connect to Left FF. South + Midwest connect to Right FF.
+  const eastChamp = state.nodes.get(state.data.matchups.find(m => m.division === 'East' && m.round === 4)?.id);
+  const westChamp = state.nodes.get(state.data.matchups.find(m => m.division === 'West' && m.round === 4)?.id);
+  const southChamp = state.nodes.get(state.data.matchups.find(m => m.division === 'South' && m.round === 4)?.id);
+  const midWestChamp = state.nodes.get(state.data.matchups.find(m => m.division === 'Midwest' && m.round === 4)?.id);
 
-  connectNodes(state.nodes.get(finalFour[0].id), state.nodes.get(title.id), title.id);
-  connectNodes(state.nodes.get(finalFour[1].id), state.nodes.get(title.id), title.id);
+  const leftFFY = ((eastChamp?.y || 0) + (westChamp?.y || 0)) / 2;
+  const rightFFY = ((southChamp?.y || 0) + (midWestChamp?.y || 0)) / 2;
+
+  // Place Final Four
+  placeNode(ffGames[0], 800, leftFFY);
+  placeNode(ffGames[1], 1040, rightFFY);
+
+  if (eastChamp && westChamp) {
+    connect(eastChamp, state.nodes.get(ffGames[0].id), ffGames[0].id);
+    connect(westChamp, state.nodes.get(ffGames[0].id), ffGames[0].id);
+  }
+  if (southChamp && midWestChamp) {
+    connect(southChamp, state.nodes.get(ffGames[1].id), ffGames[1].id);
+    connect(midWestChamp, state.nodes.get(ffGames[1].id), ffGames[1].id);
+  }
+
+  // Place Title Game perfectly centered
+  const titleY = (leftFFY + rightFFY) / 2;
+  placeNode(titleGame, 920, titleY, true);
+
+  connect(state.nodes.get(ffGames[0].id), state.nodes.get(titleGame.id), titleGame.id);
+  connect(state.nodes.get(ffGames[1].id), state.nodes.get(titleGame.id), titleGame.id);
 }
 
-function placeNode(game, x, y, champion = false) {
-  const card = document.createElement('button');
-  card.type = 'button';
-  card.className = `match-card${champion ? ' is-champion' : ''}`;
-  card.style.left = `${x}px`;
-  card.style.top = `${y}px`;
-  card.dataset.id = game.id;
-  card.setAttribute('aria-label', `${game.round_name}${game.division ? ` ${game.division}` : ''} ${game.matchup} ${game.predicted_winner} ${pct(game.win_probability)}`);
-
-  const confidence = game.website_notes?.confidence || 'medium';
-  card.innerHTML = `
-    <span class="match-card__round">${game.round_name}${game.division ? ` • ${game.division}` : ''}</span>
-    <div class="match-card__teams">${game.matchup}</div>
-    <div class="match-card__meta">
-      <span class="match-card__winner">${game.predicted_winner} • ${pct(game.win_probability)}</span>
-      <span class="conf-dot" style="background:${CONF[confidence] || CONF.medium}">${confidence}</span>
-    </div>
+function placeNode(game, x, y, isChampionItem = false) {
+  const el = document.createElement('button');
+  el.className = `match-card ${isChampionItem ? 'is-champion' : ''}`;
+  el.style.left = `${x}px`;
+  el.style.top = `${y}px`;
+  el.dataset.id = game.id;
+  
+  el.innerHTML = `
+    <p class="card-teams">${game.matchup}</p>
+    <p class="card-winner">Pick: <span class="card-winner-highlight">${game.predicted_winner}</span> (${pct(game.win_probability)})</p>
   `;
 
-  card.addEventListener('click', () => {
-    focusMatchup(game.id);
+  el.addEventListener('click', () => {
+    state.nodes.forEach(n => n.el.classList.remove('is-focused'));
+    el.classList.add('is-focused');
     openDetail(game);
   });
 
-  els.nodesLayer.appendChild(card);
+  els.nodesLayer.appendChild(el);
+
   state.nodes.set(game.id, {
     id: game.id,
     game,
-    x,
-    y,
+    x, y,
     cx: x + SCENE.cardW / 2,
     cy: y + SCENE.cardH / 2,
     left: x,
     right: x + SCENE.cardW,
-    top: y,
-    bottom: y + SCENE.cardH,
-    el: card,
+    el
   });
 }
 
-function connectNodes(source, target, targetId) {
-  const isChampion = state.championIds.has(source.id) && state.championIds.has(targetId);
+function connect(source, target, targetId) {
+  if (!source || !target) return;
+  const isChampionLine = state.championIds.has(source.id) && state.championIds.has(targetId);
+  
+  // Decide routing. Normally, from right of left-node to left of right-node.
+  // We determine left-to-right visually.
   const startX = source.cx < target.cx ? source.right : source.left;
   const endX = source.cx < target.cx ? target.left : target.right;
   const midX = startX + (endX - startX) / 2;
+  
   const d = [
     `M ${startX} ${source.cy}`,
-    `L ${midX} ${source.cy}`,
-    `L ${midX} ${target.cy}`,
-    `L ${endX} ${target.cy}`,
+    `C ${midX} ${source.cy}, ${midX} ${target.cy}, ${endX} ${target.cy}`
   ].join(' ');
 
   const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
   path.setAttribute('d', d);
-  path.setAttribute('class', `connector-line${isChampion ? ' is-champion' : ''}`);
+  path.setAttribute('class', `connector-line ${isChampionLine ? 'is-champion' : ''}`);
   els.connectorLayer.appendChild(path);
 }
 
 function renderConnectorDefs() {
   els.connectorLayer.innerHTML = `
     <defs>
-      <linearGradient id="connectorGradient" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0%" stop-color="rgba(124,92,255,0.95)" />
-        <stop offset="100%" stop-color="rgba(4,207,255,0.82)" />
-      </linearGradient>
       <linearGradient id="championGradient" x1="0" y1="0" x2="1" y2="0">
-        <stop offset="0%" stop-color="rgba(255,200,87,0.98)" />
-        <stop offset="100%" stop-color="rgba(255,128,64,0.96)" />
+        <stop offset="0%" stop-color="#10b981" />
+        <stop offset="50%" stop-color="#3b82f6" />
+        <stop offset="100%" stop-color="#10b981" />
       </linearGradient>
     </defs>
   `;
 }
 
+// -------------------------------------------------------------
+// Viewport & Pan/Zoom Logic
+// -------------------------------------------------------------
 function bindUI() {
   els.resetViewBtn.addEventListener('click', fitFull);
-  els.fitChampionBtn.addEventListener('click', () => focusPreset('Champion path'));
-  els.fitFinalBtn.addEventListener('click', () => focusPreset('Final Four'));
-  els.zoomInBtn.addEventListener('click', () => zoomBy(1.18));
-  els.zoomOutBtn.addEventListener('click', () => zoomBy(1 / 1.18));
+  
   els.closeDetailBtn.addEventListener('click', closeDetail);
-  els.detailSheet.querySelector('.detail-sheet__backdrop').addEventListener('click', closeDetail);
+  els.closeDetailBackdrop.addEventListener('click', closeDetail);
 
-  const viewport = els.viewport;
-  viewport.addEventListener('pointerdown', (e) => {
-    if (e.target.closest('.match-card')) return;
+  const vp = els.viewport;
+
+  vp.addEventListener('pointerdown', (e) => {
+    if (e.target.closest('.match-card') || els.detailSheet.classList.contains('is-open')) return;
+    
     state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
-    viewport.setPointerCapture(e.pointerId);
+    vp.setPointerCapture(e.pointerId);
 
     if (state.pointers.size === 1) {
       state.drag = { x: e.clientX, y: e.clientY, tx: state.tx, ty: state.ty };
@@ -308,23 +253,20 @@ function bindUI() {
     }
   });
 
-  viewport.addEventListener('pointermove', (e) => {
+  vp.addEventListener('pointermove', (e) => {
     if (!state.pointers.has(e.pointerId)) return;
     state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
 
     if (state.pointers.size === 2) {
       const pinch = getPinchState();
-      if (!state.pinch) {
-        state.pinch = pinch;
-        return;
-      }
-
-      const multiplier = pinch.distance / state.pinch.distance;
-      const nextScale = clamp(state.pinch.startScale * multiplier, 0.42, 2.75);
+      if (!state.pinch) { state.pinch = pinch; return; }
+      
+      const multiplier = pinch.dist / state.pinch.dist;
+      const nextScale = clamp(state.pinch.startScale * multiplier, 0.15, 3.0);
       state.scale = nextScale;
       state.tx = pinch.center.x - state.pinch.sceneCenter.x * nextScale;
       state.ty = pinch.center.y - state.pinch.sceneCenter.y * nextScale;
-      applyTransform();
+      applyTransform(false);
       return;
     }
 
@@ -335,191 +277,134 @@ function bindUI() {
     }
   });
 
-  const clearPointer = (e) => {
+  const clearPtr = (e) => {
     state.pointers.delete(e.pointerId);
-
     if (state.pointers.size === 1) {
-      const [remaining] = [...state.pointers.values()];
-      state.drag = { x: remaining.x, y: remaining.y, tx: state.tx, ty: state.ty };
+      const rem = [...state.pointers.values()][0];
+      state.drag = { x: rem.x, y: rem.y, tx: state.tx, ty: state.ty };
       state.pinch = null;
     } else {
-      state.drag = null;
-      state.pinch = null;
+      state.drag = null; state.pinch = null;
     }
-
-    clampTransform();
-    applyTransform(false);
+    applyTransform(true); // Clamp upon release
   };
 
-  viewport.addEventListener('pointerup', clearPointer);
-  viewport.addEventListener('pointercancel', clearPointer);
-  viewport.addEventListener('pointerleave', clearPointer);
-  viewport.addEventListener('wheel', (e) => {
+  vp.addEventListener('pointerup', clearPtr);
+  vp.addEventListener('pointercancel', clearPtr);
+  vp.addEventListener('pointerleave', clearPtr);
+
+  vp.addEventListener('wheel', (e) => {
+    if(els.detailSheet.classList.contains('is-open')) return;
     e.preventDefault();
-    zoomBy(e.deltaY < 0 ? 1.08 : 1 / 1.08, e.offsetX, e.offsetY);
+    const mult = e.deltaY < 0 ? 1.1 : 0.9;
+    zoomBy(mult, e.clientX, e.clientY);
   }, { passive: false });
 
-  window.addEventListener('resize', () => applyTransform());
+  window.addEventListener('resize', () => applyTransform(true));
 }
 
 function fitFull() {
-  state.focusedId = null;
   const vw = els.viewport.clientWidth;
   const vh = els.viewport.clientHeight;
-  const scale = Math.min(vw / SCENE.width, vh / SCENE.height) * 0.98;
-  state.scale = clamp(scale, 0.42, 1);
+  const targetScale = Math.min(vw / (SCENE.width + 40), vh / (SCENE.height + 140));
+  
+  state.scale = clamp(targetScale, 0.15, 1);
   state.tx = (vw - SCENE.width * state.scale) / 2;
-  state.ty = Math.max(16, (vh - SCENE.height * state.scale) / 2);
-  els.viewLabel.textContent = 'Full bracket overview';
-  updateFocusedCard();
-  applyTransform();
+  state.ty = vw < 768 ? 140 : (vh - SCENE.height * state.scale) / 2;
+  applyTransform(true);
 }
 
-function focusPreset(name) {
-  const presets = {
-    East: { x: 10, y: 20, w: 920, h: 640, label: 'East region' },
-    West: { x: 870, y: 20, w: 920, h: 640, label: 'West region' },
-    South: { x: 10, y: 700, w: 920, h: 620, label: 'South region' },
-    Midwest: { x: 870, y: 700, w: 920, h: 620, label: 'Midwest region' },
-    'Final Four': { x: 720, y: 410, w: 420, h: 470, label: 'Final Four' },
-    'Champion path': { x: 720, y: 430, w: 390, h: 360, label: 'Champion path' },
-  };
-  if (!presets[name]) return;
-  state.focusedId = null;
-  updateFocusedCard();
-  fitRect(presets[name]);
+function zoomBy(multiplier, ox, oy) {
+  const nextScale = clamp(state.scale * multiplier, 0.15, 3.0);
+  const sceneX = (ox - state.tx) / state.scale;
+  const sceneY = (oy - state.ty) / state.scale;
+  
+  state.scale = nextScale;
+  state.tx = ox - sceneX * nextScale;
+  state.ty = oy - sceneY * nextScale;
+  applyTransform(true);
 }
 
-function focusRound(round) {
-  const games = state.data.matchups.filter((m) => m.round === round).map((m) => state.nodes.get(m.id));
-  const bounds = boundsForNodes(games);
-  state.focusedId = null;
-  updateFocusedCard();
-  fitRect({ ...bounds, label: LABELS[round] || `Round ${round}` });
-}
-
-function focusMatchup(id) {
-  const node = state.nodes.get(id);
-  if (!node) return;
-  state.focusedId = id;
-  updateFocusedCard();
-  fitRect({ x: node.x - 70, y: node.y - 80, w: 360, h: 240, label: node.game.matchup });
-}
-
-function fitRect({ x, y, w, h, label }) {
-  const vw = els.viewport.clientWidth;
-  const vh = els.viewport.clientHeight;
-  const scale = Math.min(vw / w, vh / h) * 0.84;
-  state.scale = clamp(scale, 0.62, 2.6);
-  state.tx = vw / 2 - (x + w / 2) * state.scale;
-  state.ty = vh / 2 - (y + h / 2) * state.scale;
-  els.viewLabel.textContent = label;
-  applyTransform();
-}
-
-function zoomBy(multiplier, originX, originY) {
-  const oldScale = state.scale;
-  const newScale = clamp(oldScale * multiplier, 0.42, 2.75);
-  if (newScale === oldScale) return;
-
-  const ox = originX ?? els.viewport.clientWidth / 2;
-  const oy = originY ?? els.viewport.clientHeight / 2;
-  const sceneX = (ox - state.tx) / oldScale;
-  const sceneY = (oy - state.ty) / oldScale;
-
-  state.scale = newScale;
-  state.tx = ox - sceneX * newScale;
-  state.ty = oy - sceneY * newScale;
-  applyTransform();
-}
-
-function applyTransform(shouldClamp = true) {
-  if (shouldClamp) clampTransform();
+function applyTransform(doClamp = true) {
+  if (doClamp) clampTransform();
   els.scene.style.transform = `translate(${state.tx}px, ${state.ty}px) scale(${state.scale})`;
 }
 
 function clampTransform() {
   const vw = els.viewport.clientWidth;
   const vh = els.viewport.clientHeight;
-  const sceneW = SCENE.width * state.scale;
-  const sceneH = SCENE.height * state.scale;
-  const minX = Math.min(40, vw - sceneW - 40);
-  const maxX = Math.max(40, vw - sceneW + 40);
-  const minY = Math.min(40, vh - sceneH - 40);
-  const maxY = Math.max(40, vh - sceneH + 40);
-  state.tx = clamp(state.tx, maxX, minX);
-  state.ty = clamp(state.ty, maxY, minY);
+  const sw = SCENE.width * state.scale;
+  const sh = SCENE.height * state.scale;
+  
+  const buffer = 150;
+  const minTx = vw - sw - buffer;
+  const maxTx = buffer;
+  const minTy = vh - sh - buffer;
+  const maxTy = buffer;
+  
+  state.tx = clamp(state.tx, Math.min(minTx, maxTx), Math.max(minTx, maxTx));
+  state.ty = clamp(state.ty, Math.min(minTy, maxTy), Math.max(minTy, maxTy));
 }
 
-function updateFocusedCard() {
-  state.nodes.forEach((node) => {
-    node.el.classList.toggle('is-focused', node.id === state.focusedId);
-  });
+function getPinchState() {
+  const [a, b] = [...state.pointers.values()];
+  const cx = (a.x + b.x) / 2;
+  const cy = (a.y + b.y) / 2;
+  const dist = Math.hypot(b.x - a.x, b.y - a.y) || 1;
+  return {
+    center: { x: cx, y: cy },
+    dist,
+    startScale: state.pinch?.startScale ?? state.scale,
+    sceneCenter: state.pinch?.sceneCenter ?? { x: (cx - state.tx)/state.scale, y: (cy - state.ty)/state.scale }
+  };
 }
 
-function openDetail(matchup) {
-  els.detailRound.textContent = `${matchup.round_name}${matchup.division ? ` • ${matchup.division}` : ''}`;
-  els.detailMatchup.textContent = matchup.matchup;
-  els.detailWinner.textContent = `Pick: ${matchup.predicted_winner}`;
-  els.detailProbability.textContent = `${pct(matchup.win_probability)} win probability`;
-  els.detailConfidence.textContent = `${matchup.website_notes?.confidence || 'medium'} confidence`;
-  els.detailAnalysis.textContent = matchup.prediction_analysis;
-  els.detailImage.src = matchup.key_prediction_attribute?.image_url || '';
-  els.detailImage.alt = matchup.key_prediction_attribute?.name || 'Key factor';
-  els.detailTitle.textContent = matchup.website_notes?.popup_title || matchup.key_prediction_attribute?.name || 'Key factor';
-  els.detailCaption.textContent = matchup.website_notes?.popup_caption || matchup.key_prediction_attribute?.reason || '';
-  els.detailReason.textContent = matchup.key_prediction_attribute?.reason || matchup.prediction_analysis;
-  els.detailSource.textContent = matchup.key_prediction_attribute?.image_source || matchup.key_prediction_attribute?.type || 'Prediction data';
+// -------------------------------------------------------------
+// Details UI
+// -------------------------------------------------------------
+function openDetail(m) {
+  els.detailRound.textContent = `${m.round_name}${m.division ? ` • ${m.division}` : ''}`;
+  els.detailMatchup.textContent = m.matchup;
+  els.detailWinner.textContent = `Pick: ${m.predicted_winner}`;
+  els.detailProbability.textContent = `${pct(m.win_probability)} Win Prob`;
+  
+  const conf = m.website_notes?.confidence || 'medium';
+  els.detailConfidence.textContent = `${conf} Confidence`;
+  els.detailConfidence.style.color = '#fff';
+  els.detailConfidence.style.backgroundColor = CONF[conf] || CONF.medium;
+
+  els.detailAnalysis.textContent = m.prediction_analysis;
+  
+  if (m.key_prediction_attribute) {
+    els.detailImage.src = m.key_prediction_attribute.image_url || '';
+    els.detailTitle.textContent = m.website_notes?.popup_title || m.key_prediction_attribute.name;
+    els.detailCaption.textContent = m.website_notes?.popup_caption || m.key_prediction_attribute.reason;
+  }
+  
   els.detailSheet.classList.add('is-open');
   els.detailSheet.setAttribute('aria-hidden', 'false');
+  
+  // Also slightly adjust pan to ensure node is visible above bottom sheet in mobile
+  if (window.innerWidth < 768) {
+    const nodeYOnScreen = (state.nodes.get(m.id).cy * state.scale) + state.ty;
+    const sheetTop = window.innerHeight * 0.4; // rough estimate of sheet height top
+    if (nodeYOnScreen > sheetTop) {
+      state.ty -= (nodeYOnScreen - sheetTop + 50);
+      applyTransform(true);
+    }
+  }
 }
 
 function closeDetail() {
   els.detailSheet.classList.remove('is-open');
   els.detailSheet.setAttribute('aria-hidden', 'true');
+  state.nodes.forEach(n => n.el.classList.remove('is-focused'));
 }
 
-function boundsForNodes(nodes) {
-  const filtered = nodes.filter(Boolean);
-  const xs = filtered.map((n) => n.x);
-  const ys = filtered.map((n) => n.y);
-  const rights = filtered.map((n) => n.x + SCENE.cardW);
-  const bottoms = filtered.map((n) => n.y + SCENE.cardH);
-  return {
-    x: Math.min(...xs) - 70,
-    y: Math.min(...ys) - 70,
-    w: Math.max(...rights) - Math.min(...xs) + 140,
-    h: Math.max(...bottoms) - Math.min(...ys) + 140,
-  };
-}
+// -------------------------------------------------------------
+// Utils
+// -------------------------------------------------------------
+function pct(v) { return `${Math.round((v || 0) * 100)}%`; }
+function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
 
-function getPinchState() {
-  const [a, b] = [...state.pointers.values()];
-  const center = {
-    x: (a.x + b.x) / 2,
-    y: (a.y + b.y) / 2,
-  };
-  const distance = Math.hypot(b.x - a.x, b.y - a.y) || 1;
-  return {
-    center,
-    distance,
-    startScale: state.pinch?.startScale ?? state.scale,
-    sceneCenter: state.pinch?.sceneCenter ?? {
-      x: (center.x - state.tx) / state.scale,
-      y: (center.y - state.ty) / state.scale,
-    },
-  };
-}
-
-function pct(value) {
-  return `${Math.round((value || 0) * 100)}%`;
-}
-
-function clamp(value, min, max) {
-  return Math.max(min, Math.min(max, value));
-}
-
-init().catch((error) => {
-  console.error(error);
-  els.nodesLayer.innerHTML = '<div style="padding:20px;color:white">Failed to load bracket data.</div>';
-});
+init();

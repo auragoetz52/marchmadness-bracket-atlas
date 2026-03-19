@@ -2,154 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#050816" />
-  <title>March Madness 2025 — Bracket Atlas</title>
-  <meta name="description" content="A premium, dark, zoomable March Madness 2025 bracket experience with cinematic focus states, matchup detail sheets, and mobile-first navigation." />
-  <meta name="robots" content="index,follow" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="March Madness 2025 — Bracket Atlas" />
-  <meta property="og:description" content="A premium dark-themed bracket experience built from tournament prediction data." />
-  <meta property="og:url" content="https://marchmadness.agigui.com" />
-  <meta property="og:image" content="https://marchmadness.agigui.com/favicon.svg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="March Madness 2025 — Bracket Atlas" />
-  <meta name="twitter:description" content="A premium dark-themed bracket experience built from tournament prediction data." />
-  <meta name="twitter:image" content="https://marchmadness.agigui.com/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#040611" />
+  <title>March Madness 2025 — Bracket Map</title>
+  <meta name="description" content="A gorgeous, interactive map of the 2025 March Madness tournament." />
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
+  <!-- Atmospheric Background -->
   <div class="bg-orb bg-orb--a"></div>
   <div class="bg-orb bg-orb--b"></div>
+  <div class="bg-grain"></div>
   <div class="bg-grid"></div>
-  <div class="noise"></div>
 
-  <div class="app">
-    <header class="hero glass">
-      <div class="hero__copy">
-        <p class="eyebrow">2025 March Madness • Premium Bracket Atlas</p>
-        <h1>See the whole tournament first. Then dive all the way down.</h1>
-        <p class="hero__lede">
-          Built as a mobile-first, dark mode bracket experience with smooth focus states, cinematic zoom,
-          matchup detail sheets, and a full tournament overview that actually feels like a bracket.
-        </p>
-      </div>
+  <!-- Main Map Viewport -->
+  <main id="viewport" class="viewport">
+    <div id="bracketScene" class="bracket-scene">
+      <svg id="connectorLayer" class="connector-layer" aria-hidden="true"></svg>
+      <div id="nodesLayer" class="nodes-layer"></div>
+    </div>
+  </main>
 
-      <div class="hero__rail">
-        <div class="stat-card">
-          <span>Champion</span>
-          <strong id="championName">Houston</strong>
-        </div>
-        <div class="stat-card">
-          <span>Games picked</span>
-          <strong id="gamesCount">63</strong>
-        </div>
-        <div class="stat-card">
-          <span>Interaction</span>
-          <strong>Zoom • Pan • Tap</strong>
-        </div>
-      </div>
-    </header>
-
-    <section class="control-bar glass">
-      <div class="control-bar__left">
-        <button id="resetViewBtn" class="btn btn--primary" type="button">Full bracket</button>
-        <button id="fitChampionBtn" class="btn" type="button">Champion path</button>
-        <button id="fitFinalBtn" class="btn" type="button">Final Four</button>
-      </div>
-      <div class="legend" aria-label="Confidence legend">
-        <span class="legend__title">Confidence</span>
-        <span class="legend-pill legend-pill--vh">Very high</span>
-        <span class="legend-pill legend-pill--h">High</span>
-        <span class="legend-pill legend-pill--m">Medium</span>
-        <span class="legend-pill legend-pill--l">Low</span>
-      </div>
-    </section>
-
-    <section class="workspace">
-      <aside class="sidebar glass">
-        <div class="sidebar__section">
-          <p class="sidebar__label">Quick focus</p>
-          <div id="regionButtons" class="region-buttons"></div>
-        </div>
-
-        <div class="sidebar__section">
-          <p class="sidebar__label">Rounds</p>
-          <div id="roundButtons" class="round-buttons"></div>
-        </div>
-
-        <div class="sidebar__section">
-          <p class="sidebar__label">Champion run</p>
-          <div id="championPath" class="champion-path"></div>
-        </div>
-
-        <div class="sidebar__section sidebar__footer">
-          <p>
-            This bracket experience was created by OpenClaw using the GPT 5.4 model made by
-            <a href="https://agigui.com" target="_blank" rel="noreferrer">agigui.com</a> :)
-          </p>
-        </div>
-      </aside>
-
-      <main class="canvas-panel glass">
-        <div class="canvas-toolbar">
-          <div>
-            <p class="eyebrow">Interactive bracket</p>
-            <h2 id="viewLabel">Full bracket overview</h2>
-            <p class="toolbar-subtitle">Tap any region or game card. Drag to pan. Use the minimap to jump.</p>
-          </div>
-          <div class="zoom-controls">
-            <button id="zoomOutBtn" class="icon-btn" type="button" aria-label="Zoom out">−</button>
-            <button id="zoomInBtn" class="icon-btn" type="button" aria-label="Zoom in">+</button>
-          </div>
-        </div>
-
-        <div id="viewport" class="viewport">
-          <div id="bracketScene" class="bracket-scene">
-            <svg id="connectorLayer" class="connector-layer" aria-hidden="true"></svg>
-            <div id="nodesLayer" class="nodes-layer"></div>
-          </div>
-        </div>
-      </main>
-    </section>
+  <!-- Floating HUD -->
+  <div class="hud-top">
+    <div class="hud-title-card glass">
+      <h1 class="hud-title">Bracket Map</h1>
+      <p class="hud-subtitle" id="gamesCountText">March Madness 2025</p>
+    </div>
   </div>
 
-  <section id="detailSheet" class="detail-sheet" aria-hidden="true">
-    <div class="detail-sheet__backdrop"></div>
-    <div class="detail-sheet__panel glass">
-      <button id="closeDetailBtn" class="detail-sheet__close" type="button" aria-label="Close details">×</button>
-      <p id="detailRound" class="eyebrow"></p>
-      <h3 id="detailMatchup"></h3>
+  <div class="hud-bottom-actions">
+    <button id="resetViewBtn" class="fab fab--primary" type="button" aria-label="Zoom to fit">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3H3v3M18 3h3v3M6 21H3v-3M18 21h3v-3M14 10l5-5M10 14l-5 5M10 10L5 5M14 14l5 5"/></svg>
+    </button>
+  </div>
 
-      <div class="detail-pills">
-        <span id="detailWinner" class="detail-pill detail-pill--winner"></span>
-        <span id="detailProbability" class="detail-pill"></span>
-        <span id="detailConfidence" class="detail-pill"></span>
+  <!-- Detail Bottom Sheet -->
+  <section id="detailSheet" class="bottom-sheet" aria-hidden="true">
+    <div class="bottom-sheet__backdrop" id="closeDetailBackdrop"></div>
+    <div class="bottom-sheet__panel glass-strong">
+      <div class="bottom-sheet__drag-handle"></div>
+      
+      <div class="bottom-sheet__head">
+        <p id="detailRound" class="eyebrow"></p>
+        <button id="closeDetailBtn" class="icon-btn" type="button" aria-label="Close">✕</button>
+      </div>
+      
+      <h3 id="detailMatchup" class="detail-matchup"></h3>
+
+      <div class="detail-badges">
+        <span id="detailWinner" class="badge badge--winner"></span>
+        <span id="detailProbability" class="badge"></span>
+        <span id="detailConfidence" class="badge"></span>
       </div>
 
-      <p id="detailAnalysis" class="detail-analysis"></p>
-
-      <div class="detail-spotlight">
-        <img id="detailImage" alt="" />
-        <div>
-          <p class="eyebrow">Key factor</p>
-          <h4 id="detailTitle"></h4>
-          <p id="detailCaption"></p>
-        </div>
-      </div>
-
-      <div class="detail-meta-grid">
-        <div class="detail-meta-card">
-          <span class="eyebrow">Prediction note</span>
-          <p id="detailReason"></p>
-        </div>
-        <div class="detail-meta-card">
-          <span class="eyebrow">Source label</span>
-          <p id="detailSource"></p>
+      <div class="detail-content scrollable">
+        <p id="detailAnalysis" class="detail-analysis text-body"></p>
+        
+        <div class="detail-highlight">
+          <img id="detailImage" alt="" class="highlight-img" />
+          <div class="highlight-info">
+            <span class="eyebrow">Key Factor</span>
+            <h4 id="detailTitle" class="highlight-title"></h4>
+            <p id="detailCaption" class="text-caption"></p>
+          </div>
         </div>
       </div>
     </div>
