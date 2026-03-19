@@ -40,12 +40,10 @@ const els = {
   scene: document.getElementById('bracketScene'),
   nodesLayer: document.getElementById('nodesLayer'),
   connectorLayer: document.getElementById('connectorLayer'),
-  minimapSvg: document.getElementById('minimapSvg'),
   viewLabel: document.getElementById('viewLabel'),
   resetViewBtn: document.getElementById('resetViewBtn'),
   fitChampionBtn: document.getElementById('fitChampionBtn'),
   fitFinalBtn: document.getElementById('fitFinalBtn'),
-  fitMapBtn: document.getElementById('fitMapBtn'),
   zoomInBtn: document.getElementById('zoomInBtn'),
   zoomOutBtn: document.getElementById('zoomOutBtn'),
   detailSheet: document.getElementById('detailSheet'),
@@ -165,7 +163,6 @@ function renderScene() {
   renderRegion('South', 'left', 770);
   renderRegion('Midwest', 'right', 770);
   renderFinalRounds();
-  renderMinimap();
 }
 
 function renderRegion(division, side, yBase) {
@@ -287,50 +284,10 @@ function renderConnectorDefs() {
   `;
 }
 
-function renderMinimap() {
-  const svg = els.minimapSvg;
-  svg.innerHTML = '';
-
-  state.nodes.forEach((node) => {
-    const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-    rect.setAttribute('x', node.x);
-    rect.setAttribute('y', node.y);
-    rect.setAttribute('width', SCENE.cardW);
-    rect.setAttribute('height', SCENE.cardH);
-    rect.setAttribute('rx', '20');
-    rect.setAttribute('class', `minimap-card${state.championIds.has(node.id) ? ' is-champion' : ''}${state.focusedId === node.id ? ' is-focused' : ''}`);
-    rect.addEventListener('click', () => focusMatchup(node.id));
-    svg.appendChild(rect);
-  });
-
-  const viewportRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-  viewportRect.setAttribute('id', 'minimapViewport');
-  viewportRect.setAttribute('class', 'minimap-viewport');
-  svg.appendChild(viewportRect);
-  updateMinimapViewport();
-}
-
-function updateMinimapViewport() {
-  const rect = document.getElementById('minimapViewport');
-  if (!rect) return;
-  const vw = els.viewport.clientWidth;
-  const vh = els.viewport.clientHeight;
-  const x = -state.tx / state.scale;
-  const y = -state.ty / state.scale;
-  const w = vw / state.scale;
-  const h = vh / state.scale;
-  rect.setAttribute('x', clamp(x, 0, SCENE.width));
-  rect.setAttribute('y', clamp(y, 0, SCENE.height));
-  rect.setAttribute('width', Math.min(w, SCENE.width));
-  rect.setAttribute('height', Math.min(h, SCENE.height));
-  rect.setAttribute('rx', '18');
-}
-
 function bindUI() {
   els.resetViewBtn.addEventListener('click', fitFull);
   els.fitChampionBtn.addEventListener('click', () => focusPreset('Champion path'));
   els.fitFinalBtn.addEventListener('click', () => focusPreset('Final Four'));
-  els.fitMapBtn.addEventListener('click', fitFull);
   els.zoomInBtn.addEventListener('click', () => zoomBy(1.18));
   els.zoomOutBtn.addEventListener('click', () => zoomBy(1 / 1.18));
   els.closeDetailBtn.addEventListener('click', closeDetail);
@@ -338,7 +295,7 @@ function bindUI() {
 
   const viewport = els.viewport;
   viewport.addEventListener('pointerdown', (e) => {
-    if (e.target.closest('.match-card') || e.target.closest('.minimap')) return;
+    if (e.target.closest('.match-card')) return;
     state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
     viewport.setPointerCapture(e.pointerId);
 
@@ -479,7 +436,6 @@ function zoomBy(multiplier, originX, originY) {
 function applyTransform(shouldClamp = true) {
   if (shouldClamp) clampTransform();
   els.scene.style.transform = `translate(${state.tx}px, ${state.ty}px) scale(${state.scale})`;
-  updateMinimapViewport();
 }
 
 function clampTransform() {
@@ -499,7 +455,6 @@ function updateFocusedCard() {
   state.nodes.forEach((node) => {
     node.el.classList.toggle('is-focused', node.id === state.focusedId);
   });
-  renderMinimap();
 }
 
 function openDetail(matchup) {
