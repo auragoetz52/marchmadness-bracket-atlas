@@ -49,6 +49,7 @@ npx serve -s . -l $PORT
 - `favicon.svg`
 - `railway.json`
 - `package.json`
+- `AGENTS.md` — maintenance + deploy workflow for future agents
 
 ## Credits
 
