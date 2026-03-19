@@ -7,6 +7,8 @@ const state = {
   tx: 0,
   ty: 0,
   drag: null,
+  pinch: null,
+  pointers: new Map(),
   focusedId: null,
   nodes: new Map(),
   championIds: new Set(),
@@ -337,17 +339,64 @@ function bindUI() {
   const viewport = els.viewport;
   viewport.addEventListener('pointerdown', (e) => {
     if (e.target.closest('.match-card') || e.target.closest('.minimap')) return;
-    state.drag = { x: e.clientX, y: e.clientY, tx: state.tx, ty: state.ty };
+    state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
     viewport.setPointerCapture(e.pointerId);
+
+    if (state.pointers.size === 1) {
+      state.drag = { x: e.clientX, y: e.clientY, tx: state.tx, ty: state.ty };
+      state.pinch = null;
+    } else if (state.pointers.size === 2) {
+      state.drag = null;
+      state.pinch = getPinchState();
+    }
   });
+
   viewport.addEventListener('pointermove', (e) => {
-    if (!state.drag) return;
-    state.tx = state.drag.tx + (e.clientX - state.drag.x);
-    state.ty = state.drag.ty + (e.clientY - state.drag.y);
-    applyTransform(false);
+    if (!state.pointers.has(e.pointerId)) return;
+    state.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+
+    if (state.pointers.size === 2) {
+      const pinch = getPinchState();
+      if (!state.pinch) {
+        state.pinch = pinch;
+        return;
+      }
+
+      const multiplier = pinch.distance / state.pinch.distance;
+      const nextScale = clamp(state.pinch.startScale * multiplier, 0.42, 2.75);
+      state.scale = nextScale;
+      state.tx = pinch.center.x - state.pinch.sceneCenter.x * nextScale;
+      state.ty = pinch.center.y - state.pinch.sceneCenter.y * nextScale;
+      applyTransform();
+      return;
+    }
+
+    if (state.drag) {
+      state.tx = state.drag.tx + (e.clientX - state.drag.x);
+      state.ty = state.drag.ty + (e.clientY - state.drag.y);
+      applyTransform(false);
+    }
   });
-  viewport.addEventListener('pointerup', () => { state.drag = null; clampTransform(); });
-  viewport.addEventListener('pointercancel', () => { state.drag = null; clampTransform(); });
+
+  const clearPointer = (e) => {
+    state.pointers.delete(e.pointerId);
+
+    if (state.pointers.size === 1) {
+      const [remaining] = [...state.pointers.values()];
+      state.drag = { x: remaining.x, y: remaining.y, tx: state.tx, ty: state.ty };
+      state.pinch = null;
+    } else {
+      state.drag = null;
+      state.pinch = null;
+    }
+
+    clampTransform();
+    applyTransform(false);
+  };
+
+  viewport.addEventListener('pointerup', clearPointer);
+  viewport.addEventListener('pointercancel', clearPointer);
+  viewport.addEventListener('pointerleave', clearPointer);
   viewport.addEventListener('wheel', (e) => {
     e.preventDefault();
     zoomBy(e.deltaY < 0 ? 1.08 : 1 / 1.08, e.offsetX, e.offsetY);
@@ -486,6 +535,24 @@ function boundsForNodes(nodes) {
     y: Math.min(...ys) - 70,
     w: Math.max(...rights) - Math.min(...xs) + 140,
     h: Math.max(...bottoms) - Math.min(...ys) + 140,
+  };
+}
+
+function getPinchState() {
+  const [a, b] = [...state.pointers.values()];
+  const center = {
+    x: (a.x + b.x) / 2,
+    y: (a.y + b.y) / 2,
+  };
+  const distance = Math.hypot(b.x - a.x, b.y - a.y) || 1;
+  return {
+    center,
+    distance,
+    startScale: state.pinch?.startScale ?? state.scale,
+    sceneCenter: state.pinch?.sceneCenter ?? {
+      x: (center.x - state.tx) / state.scale,
+      y: (center.y - state.ty) / state.scale,
+    },
   };
 }
 
