@@ -1,0 +1,1394 @@
+{
+  "source_pdf": "C:\\code\\marchmadness\\ESPN Men's Tournament Challenge - Brackets2.pdf",
+  "source_bracket_json": "C:\\code\\marchmadness\\2025.bracket.compact.json",
+  "champion": "Houston",
+  "total_matchups": 63,
+  "matchups": [
+    {
+      "id": "matchup-001",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "East",
+      "matchup": "Duke vs Siena",
+      "predicted_winner": "Duke",
+      "win_probability": 0.98,
+      "prediction_analysis": "Top overall-quality profile, elite talent edge, and 1-vs-16 history gives Siena only a tiny path.",
+      "key_prediction_attribute": {
+        "name": "Jon Scheyer",
+        "type": "coach",
+        "reason": "No. 1 overall-seed profile, elite talent, and the highest title equity in the East.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Duke_Blue_Devils_basketball_mark.svg/250px-Duke_Blue_Devils_basketball_mark.svg.png",
+        "image_source": "Duke Blue Devils men's basketball"
+      },
+      "website_notes": {
+        "confidence": "very high",
+        "popup_title": "Jon Scheyer",
+        "popup_caption": "No. 1 overall-seed profile, elite talent, and the highest title equity in the East."
+      }
+    },
+    {
+      "id": "matchup-002",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "East",
+      "matchup": "Ohio State vs TCU",
+      "predicted_winner": "TCU",
+      "win_probability": 0.53,
+      "prediction_analysis": "Near coin-flip game. Multiple previews leaned Horned Frogs on matchup fit even while acknowledging Ohio State's guard talent.",
+      "key_prediction_attribute": {
+        "name": "Jamie Dixon",
+        "type": "coach",
+        "reason": "Physical matchup profile and enough balance to win a true 8/9 coin flip.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/TCU_Horned_Frogs_logo.svg/250px-TCU_Horned_Frogs_logo.svg.png",
+        "image_source": "TCU Horned Frogs men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Jamie Dixon",
+        "popup_caption": "Physical matchup profile and enough balance to win a true 8/9 coin flip."
+      }
+    },
+    {
+      "id": "matchup-003",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "East",
+      "matchup": "St. John's vs Northern Iowa",
+      "predicted_winner": "St. John's",
+      "win_probability": 0.72,
+      "prediction_analysis": "Good 12-seed upset slot historically, but St. John's projects like the stronger high-major team with more ways to win physically.",
+      "key_prediction_attribute": {
+        "name": "Rick Pitino",
+        "type": "coach",
+        "reason": "Pitino's March track record and St. John's physical, momentum-heavy style make them a live second-weekend team.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/St_johns_wordmark_red_2015.png",
+        "image_source": "St. John's Red Storm men's basketball"
+      },
+      "website_notes": {
+        "confidence": "medium",
+        "popup_title": "Rick Pitino",
+        "popup_caption": "Pitino's March track record and St. John's physical, momentum-heavy style make them a live second-weekend team."
+      }
+    },
+    {
+      "id": "matchup-004",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "East",
+      "matchup": "Kansas vs CA Baptist",
+      "predicted_winner": "Kansas",
+      "win_probability": 0.83,
+      "prediction_analysis": "Kansas has the stronger talent base and tournament-tested program profile; 13-seed path exists but not enough to pick it.",
+      "key_prediction_attribute": {
+        "name": "Bill Self",
+        "type": "coach",
+        "reason": "Program quality, depth, and tournament experience still travel.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Kansas_Jayhawks_1946_logo.svg/330px-Kansas_Jayhawks_1946_logo.svg.png",
+        "image_source": "Kansas Jayhawks men's basketball"
+      },
+      "website_notes": {
+        "confidence": "high",
+        "popup_title": "Bill Self",
+        "popup_caption": "Program quality, depth, and tournament experience still travel."
+      }
+    },
+    {
+      "id": "matchup-005",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "East",
+      "matchup": "Louisville vs South Florida",
+      "predicted_winner": "South Florida",
+      "win_probability": 0.52,
+      "prediction_analysis": "One of the most commonly flagged upset spots. South Florida's recent run and matchup profile got strong support, even though some models still prefer Louisville.",
+      "key_prediction_attribute": {
+        "name": "South Florida's late-season form",
+        "type": "team_trend",
+        "reason": "The Bulls entered as a trendy upset thanks to a huge closing stretch and a favorable Louisville matchup.",
+        "image_url": "https://en.wikipedia.org/wiki/South_Florida_Bulls_men's_basketball",
+        "image_source": "South Florida Bulls men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "South Florida's late-season form",
+        "popup_caption": "The Bulls entered as a trendy upset thanks to a huge closing stretch and a favorable Louisville matchup."
+      }
+    },
+    {
+      "id": "matchup-006",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "East",
+      "matchup": "Michigan State vs North Dakota State",
+      "predicted_winner": "Michigan State",
+      "win_probability": 0.91,
+      "prediction_analysis": "Classic Tom Izzo March advantage plus major talent gap.",
+      "key_prediction_attribute": {
+        "name": "Tom Izzo",
+        "type": "coach",
+        "reason": "Izzo in March plus a strong rebounding/defensive floor makes State hard to bounce early.",
+        "image_url": "https://en.wikipedia.org/wiki/Michigan_State_Spartans_men's_basketball",
+        "image_source": "Michigan State Spartans men's basketball"
+      },
+      "website_notes": {
+        "confidence": "very high",
+        "popup_title": "Tom Izzo",
+        "popup_caption": "Izzo in March plus a strong rebounding/defensive floor makes State hard to bounce early."
+      }
+    },
+    {
+      "id": "matchup-007",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "East",
+      "matchup": "UCLA vs UCF",
+      "predicted_winner": "UCLA",
+      "win_probability": 0.57,
+      "prediction_analysis": "Reasonable upset lane, but UCLA gets a slight nod on baseline program strength and half-court reliability.",
+      "key_prediction_attribute": {
+        "name": "Mick Cronin",
+        "type": "coach",
+        "reason": "Half-court discipline and defensive reliability in a toss-up seed range.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/UCLA_Bruins_primary_logo.svg/250px-UCLA_Bruins_primary_logo.svg.png",
+        "image_source": "UCLA Bruins men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Mick Cronin",
+        "popup_caption": "Half-court discipline and defensive reliability in a toss-up seed range."
+      }
+    },
+    {
+      "id": "matchup-008",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "East",
+      "matchup": "UConn vs Furman",
+      "predicted_winner": "UConn",
+      "win_probability": 0.95,
+      "prediction_analysis": "UConn sits in the tier of teams strong enough that a 15-seed upset would be a major shock.",
+      "key_prediction_attribute": {
+        "name": "Dan Hurley",
+        "type": "coach",
+        "reason": "Championship-tested program with a roster profile built for late-March games.",
+        "image_url": "https://en.wikipedia.org/wiki/UConn_Huskies_men's_basketball",
+        "image_source": "UConn Huskies men's basketball"
+      },
+      "website_notes": {
+        "confidence": "very high",
+        "popup_title": "Dan Hurley",
+        "popup_caption": "Championship-tested program with a roster profile built for late-March games."
+      }
+    },
+    {
+      "id": "matchup-009",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "West",
+      "matchup": "Arizona vs Long Island",
+      "predicted_winner": "Arizona",
+      "win_probability": 0.98,
+      "prediction_analysis": "Arizona is title-contender level; LIU needs extreme variance.",
+      "key_prediction_attribute": {
+        "name": "Jaden Bradley",
+        "type": "player",
+        "reason": "Arizona was one of the most stable title picks nationally, with balance, clutch shotmaking, and top-end guard play.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Arizona_Wildcats_logo.svg/330px-Arizona_Wildcats_logo.svg.png",
+        "image_source": "Arizona Wildcats men's basketball"
+      },
+      "website_notes": {
+        "confidence": "very high",
+        "popup_title": "Jaden Bradley",
+        "popup_caption": "Arizona was one of the most stable title picks nationally, with balance, clutch shotmaking, and top-end guard play."
+      }
+    },
+    {
+      "id": "matchup-010",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "West",
+      "matchup": "Villanova vs Utah State",
+      "predicted_winner": "Utah State",
+      "win_probability": 0.56,
+      "prediction_analysis": "Utah State was a slight favorite in some odds/model snapshots and looks underseeded relative to form.",
+      "key_prediction_attribute": {
+        "name": "Utah State backcourt",
+        "type": "players",
+        "reason": "Looked slightly underseeded in 8/9 range, with guard play strong enough to steal a first-round game.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Utah_State_Aggies_logo.svg/500px-Utah_State_Aggies_logo.svg.png",
+        "image_source": "Utah State Aggies men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Utah State backcourt",
+        "popup_caption": "Looked slightly underseeded in 8/9 range, with guard play strong enough to steal a first-round game."
+      }
+    },
+    {
+      "id": "matchup-011",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "West",
+      "matchup": "Wisconsin vs High Point",
+      "predicted_winner": "Wisconsin",
+      "win_probability": 0.58,
+      "prediction_analysis": "High Point is a real live dog and came up in upset pieces, but Wisconsin's ball security and healthier lineup make it the slightly safer pick.",
+      "key_prediction_attribute": {
+        "name": "Wisconsin ball security",
+        "type": "team_trait",
+        "reason": "Low-turnover execution and a dependable half-court offense make Wisconsin a hard out.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Wisconsin_Badgers_logo_basketball_red.svg/120px-Wisconsin_Badgers_logo_basketball_red.svg.png",
+        "image_source": "Wisconsin Badgers men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Wisconsin ball security",
+        "popup_caption": "Low-turnover execution and a dependable half-court offense make Wisconsin a hard out."
+      }
+    },
+    {
+      "id": "matchup-012",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "West",
+      "matchup": "Arkansas vs Hawai'i",
+      "predicted_winner": "Arkansas",
+      "win_probability": 0.76,
+      "prediction_analysis": "Arkansas has the superior athlete/talent ceiling; Hawai'i has the kind of profile that can hang for a while but not enough to pick outright.",
+      "key_prediction_attribute": {
+        "name": "John Calipari",
+        "type": "coach",
+        "reason": "Arkansas has the higher-end athlete ceiling and enough shotmaking to survive variance games.",
+        "image_url": "https://en.wikipedia.org/wiki/Arkansas_Razorbacks_men's_basketball",
+        "image_source": "Arkansas Razorbacks men's basketball"
+      },
+      "website_notes": {
+        "confidence": "medium",
+        "popup_title": "John Calipari",
+        "popup_caption": "Arkansas has the higher-end athlete ceiling and enough shotmaking to survive variance games."
+      }
+    },
+    {
+      "id": "matchup-013",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "West",
+      "matchup": "BYU vs Texas",
+      "predicted_winner": "BYU",
+      "win_probability": 0.6,
+      "prediction_analysis": "Markets and projections leaned BYU; the offense with elite shot creation gives the Cougars the edge despite defensive concerns.",
+      "key_prediction_attribute": {
+        "name": "AJ Dybantsa",
+        "type": "player",
+        "reason": "BYU's offense and star shot creation gave it the edge in a dangerous 6/11 game.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/BYU_Stretch_Y_Logo.png",
+        "image_source": "BYU Cougars men's basketball"
+      },
+      "website_notes": {
+        "confidence": "medium",
+        "popup_title": "AJ Dybantsa",
+        "popup_caption": "BYU's offense and star shot creation gave it the edge in a dangerous 6/11 game."
+      }
+    },
+    {
+      "id": "matchup-014",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "West",
+      "matchup": "Gonzaga vs Kennesaw State",
+      "predicted_winner": "Gonzaga",
+      "win_probability": 0.88,
+      "prediction_analysis": "Gonzaga remains one of the most stable tournament programs and usually handles this seed line well.",
+      "key_prediction_attribute": {
+        "name": "Mark Few",
+        "type": "coach",
+        "reason": "Gonzaga remains one of the steadiest tournament programs in the country.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Gonzaga_Bulldogs_wordmark.svg/120px-Gonzaga_Bulldogs_wordmark.svg.png",
+        "image_source": "Gonzaga Bulldogs men's basketball"
+      },
+      "website_notes": {
+        "confidence": "high",
+        "popup_title": "Mark Few",
+        "popup_caption": "Gonzaga remains one of the steadiest tournament programs in the country."
+      }
+    },
+    {
+      "id": "matchup-015",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "West",
+      "matchup": "Miami vs Missouri",
+      "predicted_winner": "Miami",
+      "win_probability": 0.52,
+      "prediction_analysis": "Very split game. Betting snippets leaned Miami slightly, while some local previews liked Miami because Missouri's recent flaws looked more concerning.",
+      "key_prediction_attribute": {
+        "name": "Miami offensive ceiling",
+        "type": "team_trait",
+        "reason": "In a split 7/10 game, Miami got the nod for slightly better big-game scoring upside.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Miami_Hurricanes_logo.svg/500px-Miami_Hurricanes_logo.svg.png",
+        "image_source": "Miami Hurricanes men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Miami offensive ceiling",
+        "popup_caption": "In a split 7/10 game, Miami got the nod for slightly better big-game scoring upside."
+      }
+    },
+    {
+      "id": "matchup-016",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "West",
+      "matchup": "Purdue vs Queens",
+      "predicted_winner": "Purdue",
+      "win_probability": 0.95,
+      "prediction_analysis": "Purdue's top-end quality and size profile should overwhelm a 15-seed.",
+      "key_prediction_attribute": {
+        "name": "Matt Painter",
+        "type": "coach",
+        "reason": "Purdue carried strong national-title odds and looked like one of the most complete 2-seeds.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Purdue_Boilermakers_logo.svg/330px-Purdue_Boilermakers_logo.svg.png",
+        "image_source": "Purdue Boilermakers men's basketball"
+      },
+      "website_notes": {
+        "confidence": "very high",
+        "popup_title": "Matt Painter",
+        "popup_caption": "Purdue carried strong national-title odds and looked like one of the most complete 2-seeds."
+      }
+    },
+    {
+      "id": "matchup-017",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "South",
+      "matchup": "Florida vs Prairie View",
+      "predicted_winner": "Florida",
+      "win_probability": 0.99,
+      "prediction_analysis": "Defending-champion caliber profile and no credible reason to fade them in round one.",
+      "key_prediction_attribute": {
+        "name": "Todd Golden",
+        "type": "coach",
+        "reason": "Defending-champion level confidence, athleticism, and lineup flexibility kept Florida on the shortest title paths.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Florida_Gators_men%27s_basketball_logo.svg/250px-Florida_Gators_men%27s_basketball_logo.svg.png",
+        "image_source": "Florida Gators men's basketball"
+      },
+      "website_notes": {
+        "confidence": "very high",
+        "popup_title": "Todd Golden",
+        "popup_caption": "Defending-champion level confidence, athleticism, and lineup flexibility kept Florida on the shortest title paths."
+      }
+    },
+    {
+      "id": "matchup-018",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "South",
+      "matchup": "Clemson vs Iowa",
+      "predicted_winner": "Iowa",
+      "win_probability": 0.55,
+      "prediction_analysis": "Iowa got a modest edge in multiple previews, with one CBS note highlighting schematic advantages and Clemson injury concerns.",
+      "key_prediction_attribute": {
+        "name": "Ben McCollum",
+        "type": "coach",
+        "reason": "Iowa had a slight schematic edge in the 8/9 game and enough shooting to spring a one-line upset.",
+        "image_url": "https://en.wikipedia.org/wiki/Iowa_Hawkeyes_men's_basketball",
+        "image_source": "Iowa Hawkeyes men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Ben McCollum",
+        "popup_caption": "Iowa had a slight schematic edge in the 8/9 game and enough shooting to spring a one-line upset."
+      }
+    },
+    {
+      "id": "matchup-019",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "South",
+      "matchup": "Vanderbilt vs McNeese",
+      "predicted_winner": "Vanderbilt",
+      "win_probability": 0.6,
+      "prediction_analysis": "McNeese is the exact kind of 12 that scares people, but consensus matchup notes kept returning to Vanderbilt's guards and ball security.",
+      "key_prediction_attribute": {
+        "name": "Tyler Tanner and Duke Miles",
+        "type": "players",
+        "reason": "Vanderbilt's guards and ball security repeatedly showed up in upset-avoidance and second-round win cases.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vanderbilt_Athletics_logo.svg/960px-Vanderbilt_Athletics_logo.svg.png",
+        "image_source": "Vanderbilt Commodores men's basketball"
+      },
+      "website_notes": {
+        "confidence": "medium",
+        "popup_title": "Tyler Tanner and Duke Miles",
+        "popup_caption": "Vanderbilt's guards and ball security repeatedly showed up in upset-avoidance and second-round win cases."
+      }
+    },
+    {
+      "id": "matchup-020",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "South",
+      "matchup": "Nebraska vs Troy",
+      "predicted_winner": "Nebraska",
+      "win_probability": 0.75,
+      "prediction_analysis": "Nebraska is good enough to win this cleanly, though the program's spotty tournament history lowers confidence a bit.",
+      "key_prediction_attribute": {
+        "name": "Nebraska physicality",
+        "type": "team_trait",
+        "reason": "The Cornhuskers looked strong enough to hold serve through the first weekend.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Nebraska_Cornhuskers_logo.svg/250px-Nebraska_Cornhuskers_logo.svg.png",
+        "image_source": "Nebraska Cornhuskers men's basketball"
+      },
+      "website_notes": {
+        "confidence": "medium",
+        "popup_title": "Nebraska physicality",
+        "popup_caption": "The Cornhuskers looked strong enough to hold serve through the first weekend."
+      }
+    },
+    {
+      "id": "matchup-021",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "South",
+      "matchup": "North Carolina vs VCU",
+      "predicted_winner": "VCU",
+      "win_probability": 0.54,
+      "prediction_analysis": "Probably the clearest 11-over-6 case on the board: strong recent VCU form, elite defense, and multiple outlets citing UNC roster/injury concerns.",
+      "key_prediction_attribute": {
+        "name": "VCU defense",
+        "type": "team_trait",
+        "reason": "Elite recent defensive form made VCU one of the most credible 11-over-6 picks on the board.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/VCU_Rams_logo.svg/250px-VCU_Rams_logo.svg.png",
+        "image_source": "VCU Rams men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "VCU defense",
+        "popup_caption": "Elite recent defensive form made VCU one of the most credible 11-over-6 picks on the board."
+      }
+    },
+    {
+      "id": "matchup-022",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "South",
+      "matchup": "Illinois vs Penn",
+      "predicted_winner": "Illinois",
+      "win_probability": 0.9,
+      "prediction_analysis": "Illinois has too much high-major firepower for this draw.",
+      "key_prediction_attribute": {
+        "name": "Brad Underwood",
+        "type": "coach",
+        "reason": "Illinois had the shot creation and scoring ceiling to shut down Cinderella momentum.",
+        "image_url": "https://en.wikipedia.org/wiki/Illinois_Fighting_Illini_men's_basketball",
+        "image_source": "Illinois Fighting Illini men's basketball"
+      },
+      "website_notes": {
+        "confidence": "very high",
+        "popup_title": "Brad Underwood",
+        "popup_caption": "Illinois had the shot creation and scoring ceiling to shut down Cinderella momentum."
+      }
+    },
+    {
+      "id": "matchup-023",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "South",
+      "matchup": "Saint Mary's vs Texas A&M",
+      "predicted_winner": "Texas A&M",
+      "win_probability": 0.52,
+      "prediction_analysis": "Styles-make-fights spot. A&M's pressure and pace disruption create a real path against Saint Mary's controlled tempo.",
+      "key_prediction_attribute": {
+        "name": "Texas A&M pressure",
+        "type": "team_trait",
+        "reason": "A&M's pace disruption and physical style created a viable 10-over-7 upset path.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Texas_A%26M_University_logo.svg/250px-Texas_A%26M_University_logo.svg.png",
+        "image_source": "Texas A&M Aggies men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Texas A&M pressure",
+        "popup_caption": "A&M's pace disruption and physical style created a viable 10-over-7 upset path."
+      }
+    },
+    {
+      "id": "matchup-024",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "South",
+      "matchup": "Houston vs Idaho",
+      "predicted_winner": "Houston",
+      "win_probability": 0.96,
+      "prediction_analysis": "Houston's defense and physicality make this one of the safest first-round picks.",
+      "key_prediction_attribute": {
+        "name": "Kelvin Sampson",
+        "type": "coach",
+        "reason": "Houston's elite defense, veteran toughness, and late-game trustworthiness made the Cougars my champion.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Houston_Cougars_primary_logo.svg/250px-Houston_Cougars_primary_logo.svg.png",
+        "image_source": "Houston Cougars men's basketball"
+      },
+      "website_notes": {
+        "confidence": "very high",
+        "popup_title": "Kelvin Sampson",
+        "popup_caption": "Houston's elite defense, veteran toughness, and late-game trustworthiness made the Cougars my champion."
+      }
+    },
+    {
+      "id": "matchup-025",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "Midwest",
+      "matchup": "Michigan vs Howard",
+      "predicted_winner": "Michigan",
+      "win_probability": 0.98,
+      "prediction_analysis": "Michigan is a true contender and should cruise unless variance gets absurd.",
+      "key_prediction_attribute": {
+        "name": "Dusty May",
+        "type": "coach",
+        "reason": "Michigan lived in the contender tier all season and had enough size and two-way quality to reach the regional final.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Michigan_Wolverines_logo.svg/330px-Michigan_Wolverines_logo.svg.png",
+        "image_source": "Michigan Wolverines men's basketball"
+      },
+      "website_notes": {
+        "confidence": "very high",
+        "popup_title": "Dusty May",
+        "popup_caption": "Michigan lived in the contender tier all season and had enough size and two-way quality to reach the regional final."
+      }
+    },
+    {
+      "id": "matchup-026",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "Midwest",
+      "matchup": "Georgia vs Saint Louis",
+      "predicted_winner": "Saint Louis",
+      "win_probability": 0.51,
+      "prediction_analysis": "Another basically-even 8/9. Slight lean to Saint Louis as a modest underseed candidate with less brand-name pull than Georgia.",
+      "key_prediction_attribute": {
+        "name": "Saint Louis shotmaking",
+        "type": "team_trait",
+        "reason": "A modest underseed candidate in a true coin-flip 8/9 game.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/SLU_Billikens_wordmark.png",
+        "image_source": "Saint Louis Billikens men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Saint Louis shotmaking",
+        "popup_caption": "A modest underseed candidate in a true coin-flip 8/9 game."
+      }
+    },
+    {
+      "id": "matchup-027",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "Midwest",
+      "matchup": "Texas Tech vs Akron",
+      "predicted_winner": "Texas Tech",
+      "win_probability": 0.68,
+      "prediction_analysis": "Akron is the sort of 12-seed people circle, but Tech still owns the stronger baseline roster and shot-making profile.",
+      "key_prediction_attribute": {
+        "name": "Texas Tech half-court scoring",
+        "type": "team_trait",
+        "reason": "Still had enough high-major scoring punch to survive the 5/12 danger zone.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Texas_Tech_Athletics_logo.svg/330px-Texas_Tech_Athletics_logo.svg.png",
+        "image_source": "Texas Tech Red Raiders basketball"
+      },
+      "website_notes": {
+        "confidence": "medium",
+        "popup_title": "Texas Tech half-court scoring",
+        "popup_caption": "Still had enough high-major scoring punch to survive the 5/12 danger zone."
+      }
+    },
+    {
+      "id": "matchup-028",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "Midwest",
+      "matchup": "Alabama vs Hofstra",
+      "predicted_winner": "Alabama",
+      "win_probability": 0.84,
+      "prediction_analysis": "Alabama's ceiling and scoring punch make it the right side despite the volatility that often follows this program.",
+      "key_prediction_attribute": {
+        "name": "Nate Oats",
+        "type": "coach",
+        "reason": "Alabama's offensive ceiling makes them dangerous whenever the game opens up.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Alabama_Crimson_Tide_logo.svg/250px-Alabama_Crimson_Tide_logo.svg.png",
+        "image_source": "Alabama Crimson Tide men's basketball"
+      },
+      "website_notes": {
+        "confidence": "high",
+        "popup_title": "Nate Oats",
+        "popup_caption": "Alabama's offensive ceiling makes them dangerous whenever the game opens up."
+      }
+    },
+    {
+      "id": "matchup-029",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "Midwest",
+      "matchup": "Tennessee vs Miami (OH)",
+      "predicted_winner": "Tennessee",
+      "win_probability": 0.74,
+      "prediction_analysis": "This is less upset-prone than the other 6/11 games because Tennessee's defensive floor is much higher.",
+      "key_prediction_attribute": {
+        "name": "Tennessee defense",
+        "type": "team_trait",
+        "reason": "The Vols' defensive floor gave them an upset path into the Sweet 16.",
+        "image_url": "https://en.wikipedia.org/wiki/Tennessee_Volunteers_basketball",
+        "image_source": "Tennessee Volunteers basketball"
+      },
+      "website_notes": {
+        "confidence": "medium",
+        "popup_title": "Tennessee defense",
+        "popup_caption": "The Vols' defensive floor gave them an upset path into the Sweet 16."
+      }
+    },
+    {
+      "id": "matchup-030",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "Midwest",
+      "matchup": "Virginia vs Wright State",
+      "predicted_winner": "Virginia",
+      "win_probability": 0.86,
+      "prediction_analysis": "Virginia's style always invites nerves, but the talent and discipline edge is still meaningful.",
+      "key_prediction_attribute": {
+        "name": "Virginia discipline",
+        "type": "team_trait",
+        "reason": "Virginia's slow pace and structure reduce variance against weaker opponents.",
+        "image_url": "https://en.wikipedia.org/wiki/Virginia_Cavaliers_men's_basketball",
+        "image_source": "Virginia Cavaliers men's basketball"
+      },
+      "website_notes": {
+        "confidence": "high",
+        "popup_title": "Virginia discipline",
+        "popup_caption": "Virginia's slow pace and structure reduce variance against weaker opponents."
+      }
+    },
+    {
+      "id": "matchup-031",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "Midwest",
+      "matchup": "Kentucky vs Santa Clara",
+      "predicted_winner": "Santa Clara",
+      "win_probability": 0.53,
+      "prediction_analysis": "One of the most popular 10-over-7 calls in the public analysis cycle, helped by Kentucky injury concerns and Santa Clara's steadier profile.",
+      "key_prediction_attribute": {
+        "name": "Herb Sendek",
+        "type": "coach",
+        "reason": "Santa Clara was a popular upset pick because of Kentucky's concerns and the Broncos' steadier profile.",
+        "image_url": "https://en.wikipedia.org/wiki/Santa_Clara_Broncos_men's_basketball",
+        "image_source": "Santa Clara Broncos men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Herb Sendek",
+        "popup_caption": "Santa Clara was a popular upset pick because of Kentucky's concerns and the Broncos' steadier profile."
+      }
+    },
+    {
+      "id": "matchup-032",
+      "round": 1,
+      "round_name": "Round of 64",
+      "division": "Midwest",
+      "matchup": "Iowa State vs Tennessee State",
+      "predicted_winner": "Iowa State",
+      "win_probability": 0.94,
+      "prediction_analysis": "Iowa State belongs in the tier of protected seeds that should survive comfortably.",
+      "key_prediction_attribute": {
+        "name": "T. J. Otzelberger",
+        "type": "coach",
+        "reason": "Iowa State kept showing up as a legitimate Final Four and title candidate because of its defense and balance.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Iowa_State_Cyclones_logo.svg/250px-Iowa_State_Cyclones_logo.svg.png",
+        "image_source": "Iowa State Cyclones men's basketball"
+      },
+      "website_notes": {
+        "confidence": "very high",
+        "popup_title": "T. J. Otzelberger",
+        "popup_caption": "Iowa State kept showing up as a legitimate Final Four and title candidate because of its defense and balance."
+      }
+    },
+    {
+      "id": "matchup-033",
+      "round": 2,
+      "round_name": "Round of 32",
+      "division": "East",
+      "matchup": "Duke vs TCU",
+      "predicted_winner": "Duke",
+      "win_probability": 0.78,
+      "prediction_analysis": "TCU is frisky, but Duke still owns the better two-way ceiling and title-level talent.",
+      "key_prediction_attribute": {
+        "name": "Jon Scheyer",
+        "type": "coach",
+        "reason": "No. 1 overall-seed profile, elite talent, and the highest title equity in the East.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Duke_Blue_Devils_basketball_mark.svg/250px-Duke_Blue_Devils_basketball_mark.svg.png",
+        "image_source": "Duke Blue Devils men's basketball"
+      },
+      "website_notes": {
+        "confidence": "high",
+        "popup_title": "Jon Scheyer",
+        "popup_caption": "No. 1 overall-seed profile, elite talent, and the highest title equity in the East."
+      }
+    },
+    {
+      "id": "matchup-034",
+      "round": 2,
+      "round_name": "Round of 32",
+      "division": "East",
+      "matchup": "St. John's vs Kansas",
+      "predicted_winner": "St. John's",
+      "win_probability": 0.52,
+      "prediction_analysis": "This is basically a toss-up, but St. John's profiles like the more dangerous momentum team and several bracket experts were high on them making a run.",
+      "key_prediction_attribute": {
+        "name": "Rick Pitino",
+        "type": "coach",
+        "reason": "Pitino's March track record and St. John's physical, momentum-heavy style make them a live second-weekend team.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/63/St_johns_wordmark_red_2015.png",
+        "image_source": "St. John's Red Storm men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Rick Pitino",
+        "popup_caption": "Pitino's March track record and St. John's physical, momentum-heavy style make them a live second-weekend team."
+      }
+    },
+    {
+      "id": "matchup-035",
+      "round": 2,
+      "round_name": "Round of 32",
+      "division": "East",
+      "matchup": "South Florida vs Michigan State",
+      "predicted_winner": "Michigan State",
+      "win_probability": 0.71,
+      "prediction_analysis": "USF is live, but this is where Izzo's size, discipline, and half-court reliability usually win out.",
+      "key_prediction_attribute": {
+        "name": "Tom Izzo",
+        "type": "coach",
+        "reason": "Izzo in March plus a strong rebounding/defensive floor makes State hard to bounce early.",
+        "image_url": "https://en.wikipedia.org/wiki/Michigan_State_Spartans_men's_basketball",
+        "image_source": "Michigan State Spartans men's basketball"
+      },
+      "website_notes": {
+        "confidence": "medium",
+        "popup_title": "Tom Izzo",
+        "popup_caption": "Izzo in March plus a strong rebounding/defensive floor makes State hard to bounce early."
+      }
+    },
+    {
+      "id": "matchup-036",
+      "round": 2,
+      "round_name": "Round of 32",
+      "division": "East",
+      "matchup": "UCLA vs UConn",
+      "predicted_winner": "UConn",
+      "win_probability": 0.73,
+      "prediction_analysis": "UConn remains one of the most trusted tournament teams in the field and has the deeper championship résumé.",
+      "key_prediction_attribute": {
+        "name": "Dan Hurley",
+        "type": "coach",
+        "reason": "Championship-tested program with a roster profile built for late-March games.",
+        "image_url": "https://en.wikipedia.org/wiki/UConn_Huskies_men's_basketball",
+        "image_source": "UConn Huskies men's basketball"
+      },
+      "website_notes": {
+        "confidence": "medium",
+        "popup_title": "Dan Hurley",
+        "popup_caption": "Championship-tested program with a roster profile built for late-March games."
+      }
+    },
+    {
+      "id": "matchup-037",
+      "round": 2,
+      "round_name": "Round of 32",
+      "division": "West",
+      "matchup": "Arizona vs Utah State",
+      "predicted_winner": "Arizona",
+      "win_probability": 0.8,
+      "prediction_analysis": "Arizona has been treated by multiple outlets as one of the three most serious title threats in the entire bracket.",
+      "key_prediction_attribute": {
+        "name": "Jaden Bradley",
+        "type": "player",
+        "reason": "Arizona was one of the most stable title picks nationally, with balance, clutch shotmaking, and top-end guard play.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Arizona_Wildcats_logo.svg/330px-Arizona_Wildcats_logo.svg.png",
+        "image_source": "Arizona Wildcats men's basketball"
+      },
+      "website_notes": {
+        "confidence": "high",
+        "popup_title": "Jaden Bradley",
+        "popup_caption": "Arizona was one of the most stable title picks nationally, with balance, clutch shotmaking, and top-end guard play."
+      }
+    },
+    {
+      "id": "matchup-038",
+      "round": 2,
+      "round_name": "Round of 32",
+      "division": "West",
+      "matchup": "Wisconsin vs Arkansas",
+      "predicted_winner": "Wisconsin",
+      "win_probability": 0.51,
+      "prediction_analysis": "Slight lean to Wisconsin's steadier execution over Arkansas's higher-variance profile.",
+      "key_prediction_attribute": {
+        "name": "Wisconsin ball security",
+        "type": "team_trait",
+        "reason": "Low-turnover execution and a dependable half-court offense make Wisconsin a hard out.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Wisconsin_Badgers_logo_basketball_red.svg/120px-Wisconsin_Badgers_logo_basketball_red.svg.png",
+        "image_source": "Wisconsin Badgers men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Wisconsin ball security",
+        "popup_caption": "Low-turnover execution and a dependable half-court offense make Wisconsin a hard out."
+      }
+    },
+    {
+      "id": "matchup-039",
+      "round": 2,
+      "round_name": "Round of 32",
+      "division": "West",
+      "matchup": "BYU vs Gonzaga",
+      "predicted_winner": "Gonzaga",
+      "win_probability": 0.58,
+      "prediction_analysis": "BYU can absolutely score enough, but Gonzaga is still the safer March pick when the game gets tight.",
+      "key_prediction_attribute": {
+        "name": "Mark Few",
+        "type": "coach",
+        "reason": "Gonzaga remains one of the steadiest tournament programs in the country.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Gonzaga_Bulldogs_wordmark.svg/120px-Gonzaga_Bulldogs_wordmark.svg.png",
+        "image_source": "Gonzaga Bulldogs men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Mark Few",
+        "popup_caption": "Gonzaga remains one of the steadiest tournament programs in the country."
+      }
+    },
+    {
+      "id": "matchup-040",
+      "round": 2,
+      "round_name": "Round of 32",
+      "division": "West",
+      "matchup": "Miami vs Purdue",
+      "predicted_winner": "Purdue",
+      "win_probability": 0.7,
+      "prediction_analysis": "Purdue projects as the sturdier and more complete team, and Miami's volatility likely catches up here.",
+      "key_prediction_attribute": {
+        "name": "Matt Painter",
+        "type": "coach",
+        "reason": "Purdue carried strong national-title odds and looked like one of the most complete 2-seeds.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Purdue_Boilermakers_logo.svg/330px-Purdue_Boilermakers_logo.svg.png",
+        "image_source": "Purdue Boilermakers men's basketball"
+      },
+      "website_notes": {
+        "confidence": "medium",
+        "popup_title": "Matt Painter",
+        "popup_caption": "Purdue carried strong national-title odds and looked like one of the most complete 2-seeds."
+      }
+    },
+    {
+      "id": "matchup-041",
+      "round": 2,
+      "round_name": "Round of 32",
+      "division": "South",
+      "matchup": "Florida vs Iowa",
+      "predicted_winner": "Florida",
+      "win_probability": 0.77,
+      "prediction_analysis": "Florida's athleticism and tempo flexibility are a rough draw for Iowa over 40 minutes.",
+      "key_prediction_attribute": {
+        "name": "Todd Golden",
+        "type": "coach",
+        "reason": "Defending-champion level confidence, athleticism, and lineup flexibility kept Florida on the shortest title paths.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Florida_Gators_men%27s_basketball_logo.svg/250px-Florida_Gators_men%27s_basketball_logo.svg.png",
+        "image_source": "Florida Gators men's basketball"
+      },
+      "website_notes": {
+        "confidence": "high",
+        "popup_title": "Todd Golden",
+        "popup_caption": "Defending-champion level confidence, athleticism, and lineup flexibility kept Florida on the shortest title paths."
+      }
+    },
+    {
+      "id": "matchup-042",
+      "round": 2,
+      "round_name": "Round of 32",
+      "division": "South",
+      "matchup": "Vanderbilt vs Nebraska",
+      "predicted_winner": "Vanderbilt",
+      "win_probability": 0.53,
+      "prediction_analysis": "Close matchup, but Vanderbilt's guard play gives it the slightly higher late-game offensive ceiling.",
+      "key_prediction_attribute": {
+        "name": "Tyler Tanner and Duke Miles",
+        "type": "players",
+        "reason": "Vanderbilt's guards and ball security repeatedly showed up in upset-avoidance and second-round win cases.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Vanderbilt_Athletics_logo.svg/960px-Vanderbilt_Athletics_logo.svg.png",
+        "image_source": "Vanderbilt Commodores men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Tyler Tanner and Duke Miles",
+        "popup_caption": "Vanderbilt's guards and ball security repeatedly showed up in upset-avoidance and second-round win cases."
+      }
+    },
+    {
+      "id": "matchup-043",
+      "round": 2,
+      "round_name": "Round of 32",
+      "division": "South",
+      "matchup": "VCU vs Illinois",
+      "predicted_winner": "Illinois",
+      "win_probability": 0.67,
+      "prediction_analysis": "VCU's pressure is real, but Illinois has enough shot creation to survive that kind of game.",
+      "key_prediction_attribute": {
+        "name": "Brad Underwood",
+        "type": "coach",
+        "reason": "Illinois had the shot creation and scoring ceiling to shut down Cinderella momentum.",
+        "image_url": "https://en.wikipedia.org/wiki/Illinois_Fighting_Illini_men's_basketball",
+        "image_source": "Illinois Fighting Illini men's basketball"
+      },
+      "website_notes": {
+        "confidence": "medium",
+        "popup_title": "Brad Underwood",
+        "popup_caption": "Illinois had the shot creation and scoring ceiling to shut down Cinderella momentum."
+      }
+    },
+    {
+      "id": "matchup-044",
+      "round": 2,
+      "round_name": "Round of 32",
+      "division": "South",
+      "matchup": "Texas A&M vs Houston",
+      "predicted_winner": "Houston",
+      "win_probability": 0.69,
+      "prediction_analysis": "Tough, ugly game potential, but Houston is better equipped than almost anyone for that exact type of fight.",
+      "key_prediction_attribute": {
+        "name": "Kelvin Sampson",
+        "type": "coach",
+        "reason": "Houston's elite defense, veteran toughness, and late-game trustworthiness made the Cougars my champion.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Houston_Cougars_primary_logo.svg/250px-Houston_Cougars_primary_logo.svg.png",
+        "image_source": "Houston Cougars men's basketball"
+      },
+      "website_notes": {
+        "confidence": "medium",
+        "popup_title": "Kelvin Sampson",
+        "popup_caption": "Houston's elite defense, veteran toughness, and late-game trustworthiness made the Cougars my champion."
+      }
+    },
+    {
+      "id": "matchup-045",
+      "round": 2,
+      "round_name": "Round of 32",
+      "division": "Midwest",
+      "matchup": "Michigan vs Saint Louis",
+      "predicted_winner": "Michigan",
+      "win_probability": 0.79,
+      "prediction_analysis": "Michigan is in a different tier from Saint Louis if it plays to its baseline.",
+      "key_prediction_attribute": {
+        "name": "Dusty May",
+        "type": "coach",
+        "reason": "Michigan lived in the contender tier all season and had enough size and two-way quality to reach the regional final.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Michigan_Wolverines_logo.svg/330px-Michigan_Wolverines_logo.svg.png",
+        "image_source": "Michigan Wolverines men's basketball"
+      },
+      "website_notes": {
+        "confidence": "high",
+        "popup_title": "Dusty May",
+        "popup_caption": "Michigan lived in the contender tier all season and had enough size and two-way quality to reach the regional final."
+      }
+    },
+    {
+      "id": "matchup-046",
+      "round": 2,
+      "round_name": "Round of 32",
+      "division": "Midwest",
+      "matchup": "Texas Tech vs Alabama",
+      "predicted_winner": "Alabama",
+      "win_probability": 0.55,
+      "prediction_analysis": "Alabama's higher offensive ceiling makes it the better pick in a volatile 4/5-type matchup.",
+      "key_prediction_attribute": {
+        "name": "Nate Oats",
+        "type": "coach",
+        "reason": "Alabama's offensive ceiling makes them dangerous whenever the game opens up.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Alabama_Crimson_Tide_logo.svg/250px-Alabama_Crimson_Tide_logo.svg.png",
+        "image_source": "Alabama Crimson Tide men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Nate Oats",
+        "popup_caption": "Alabama's offensive ceiling makes them dangerous whenever the game opens up."
+      }
+    },
+    {
+      "id": "matchup-047",
+      "round": 2,
+      "round_name": "Round of 32",
+      "division": "Midwest",
+      "matchup": "Tennessee vs Virginia",
+      "predicted_winner": "Tennessee",
+      "win_probability": 0.52,
+      "prediction_analysis": "This is a style war. Slight lean Tennessee because the defensive floor is elite and the tempo squeeze matters less in March than shot creation late.",
+      "key_prediction_attribute": {
+        "name": "Tennessee defense",
+        "type": "team_trait",
+        "reason": "The Vols' defensive floor gave them an upset path into the Sweet 16.",
+        "image_url": "https://en.wikipedia.org/wiki/Tennessee_Volunteers_basketball",
+        "image_source": "Tennessee Volunteers basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Tennessee defense",
+        "popup_caption": "The Vols' defensive floor gave them an upset path into the Sweet 16."
+      }
+    },
+    {
+      "id": "matchup-048",
+      "round": 2,
+      "round_name": "Round of 32",
+      "division": "Midwest",
+      "matchup": "Santa Clara vs Iowa State",
+      "predicted_winner": "Iowa State",
+      "win_probability": 0.74,
+      "prediction_analysis": "Santa Clara is dangerous, but Iowa State's defense and overall efficiency profile are too strong to fade here.",
+      "key_prediction_attribute": {
+        "name": "T. J. Otzelberger",
+        "type": "coach",
+        "reason": "Iowa State kept showing up as a legitimate Final Four and title candidate because of its defense and balance.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Iowa_State_Cyclones_logo.svg/250px-Iowa_State_Cyclones_logo.svg.png",
+        "image_source": "Iowa State Cyclones men's basketball"
+      },
+      "website_notes": {
+        "confidence": "medium",
+        "popup_title": "T. J. Otzelberger",
+        "popup_caption": "Iowa State kept showing up as a legitimate Final Four and title candidate because of its defense and balance."
+      }
+    },
+    {
+      "id": "matchup-049",
+      "round": 3,
+      "round_name": "Sweet 16",
+      "division": "East",
+      "matchup": "Duke vs St. John's",
+      "predicted_winner": "Duke",
+      "win_probability": 0.63,
+      "prediction_analysis": "St. John's is a great spoiler candidate, but Duke still has the better top-end shotmaking and overall ceiling.",
+      "key_prediction_attribute": {
+        "name": "Jon Scheyer",
+        "type": "coach",
+        "reason": "No. 1 overall-seed profile, elite talent, and the highest title equity in the East.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Duke_Blue_Devils_basketball_mark.svg/250px-Duke_Blue_Devils_basketball_mark.svg.png",
+        "image_source": "Duke Blue Devils men's basketball"
+      },
+      "website_notes": {
+        "confidence": "medium",
+        "popup_title": "Jon Scheyer",
+        "popup_caption": "No. 1 overall-seed profile, elite talent, and the highest title equity in the East."
+      }
+    },
+    {
+      "id": "matchup-050",
+      "round": 3,
+      "round_name": "Sweet 16",
+      "division": "East",
+      "matchup": "Michigan State vs UConn",
+      "predicted_winner": "UConn",
+      "win_probability": 0.54,
+      "prediction_analysis": "This is one of the hardest games on the board. Tiny lean to UConn because the recent championship DNA is real and the roster feels a bit more scalable.",
+      "key_prediction_attribute": {
+        "name": "Dan Hurley",
+        "type": "coach",
+        "reason": "Championship-tested program with a roster profile built for late-March games.",
+        "image_url": "https://en.wikipedia.org/wiki/UConn_Huskies_men's_basketball",
+        "image_source": "UConn Huskies men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Dan Hurley",
+        "popup_caption": "Championship-tested program with a roster profile built for late-March games."
+      }
+    },
+    {
+      "id": "matchup-051",
+      "round": 3,
+      "round_name": "Sweet 16",
+      "division": "West",
+      "matchup": "Arizona vs Wisconsin",
+      "predicted_winner": "Arizona",
+      "win_probability": 0.68,
+      "prediction_analysis": "Arizona has been widely treated as the most stable No. 1 seed outside Duke, and the Wildcats' balance travels well.",
+      "key_prediction_attribute": {
+        "name": "Jaden Bradley",
+        "type": "player",
+        "reason": "Arizona was one of the most stable title picks nationally, with balance, clutch shotmaking, and top-end guard play.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Arizona_Wildcats_logo.svg/330px-Arizona_Wildcats_logo.svg.png",
+        "image_source": "Arizona Wildcats men's basketball"
+      },
+      "website_notes": {
+        "confidence": "medium",
+        "popup_title": "Jaden Bradley",
+        "popup_caption": "Arizona was one of the most stable title picks nationally, with balance, clutch shotmaking, and top-end guard play."
+      }
+    },
+    {
+      "id": "matchup-052",
+      "round": 3,
+      "round_name": "Sweet 16",
+      "division": "West",
+      "matchup": "Gonzaga vs Purdue",
+      "predicted_winner": "Purdue",
+      "win_probability": 0.53,
+      "prediction_analysis": "Could easily go either way. Slight nod to Purdue because the overall team quality and title odds stayed stronger across most public models.",
+      "key_prediction_attribute": {
+        "name": "Matt Painter",
+        "type": "coach",
+        "reason": "Purdue carried strong national-title odds and looked like one of the most complete 2-seeds.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Purdue_Boilermakers_logo.svg/330px-Purdue_Boilermakers_logo.svg.png",
+        "image_source": "Purdue Boilermakers men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Matt Painter",
+        "popup_caption": "Purdue carried strong national-title odds and looked like one of the most complete 2-seeds."
+      }
+    },
+    {
+      "id": "matchup-053",
+      "round": 3,
+      "round_name": "Sweet 16",
+      "division": "South",
+      "matchup": "Florida vs Vanderbilt",
+      "predicted_winner": "Florida",
+      "win_probability": 0.65,
+      "prediction_analysis": "Florida's talent and two-way athleticism should win out, though Vanderbilt is good enough to make it uncomfortable.",
+      "key_prediction_attribute": {
+        "name": "Todd Golden",
+        "type": "coach",
+        "reason": "Defending-champion level confidence, athleticism, and lineup flexibility kept Florida on the shortest title paths.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/99/Florida_Gators_men%27s_basketball_logo.svg/250px-Florida_Gators_men%27s_basketball_logo.svg.png",
+        "image_source": "Florida Gators men's basketball"
+      },
+      "website_notes": {
+        "confidence": "medium",
+        "popup_title": "Todd Golden",
+        "popup_caption": "Defending-champion level confidence, athleticism, and lineup flexibility kept Florida on the shortest title paths."
+      }
+    },
+    {
+      "id": "matchup-054",
+      "round": 3,
+      "round_name": "Sweet 16",
+      "division": "South",
+      "matchup": "Illinois vs Houston",
+      "predicted_winner": "Houston",
+      "win_probability": 0.55,
+      "prediction_analysis": "There are expert paths to Illinois here, but Houston's defense and Kelvin Sampson factor make the Cougars the slightly stronger bracket pick.",
+      "key_prediction_attribute": {
+        "name": "Kelvin Sampson",
+        "type": "coach",
+        "reason": "Houston's elite defense, veteran toughness, and late-game trustworthiness made the Cougars my champion.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Houston_Cougars_primary_logo.svg/250px-Houston_Cougars_primary_logo.svg.png",
+        "image_source": "Houston Cougars men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Kelvin Sampson",
+        "popup_caption": "Houston's elite defense, veteran toughness, and late-game trustworthiness made the Cougars my champion."
+      }
+    },
+    {
+      "id": "matchup-055",
+      "round": 3,
+      "round_name": "Sweet 16",
+      "division": "Midwest",
+      "matchup": "Michigan vs Alabama",
+      "predicted_winner": "Michigan",
+      "win_probability": 0.61,
+      "prediction_analysis": "Michigan's path gets dangerous here, but the Wolverines still profile like the better all-around team if healthy enough.",
+      "key_prediction_attribute": {
+        "name": "Dusty May",
+        "type": "coach",
+        "reason": "Michigan lived in the contender tier all season and had enough size and two-way quality to reach the regional final.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Michigan_Wolverines_logo.svg/330px-Michigan_Wolverines_logo.svg.png",
+        "image_source": "Michigan Wolverines men's basketball"
+      },
+      "website_notes": {
+        "confidence": "medium",
+        "popup_title": "Dusty May",
+        "popup_caption": "Michigan lived in the contender tier all season and had enough size and two-way quality to reach the regional final."
+      }
+    },
+    {
+      "id": "matchup-056",
+      "round": 3,
+      "round_name": "Sweet 16",
+      "division": "Midwest",
+      "matchup": "Tennessee vs Iowa State",
+      "predicted_winner": "Iowa State",
+      "win_probability": 0.57,
+      "prediction_analysis": "Defensive slugfest potential, but Iowa State's balance and title-equity profile give it the nod.",
+      "key_prediction_attribute": {
+        "name": "T. J. Otzelberger",
+        "type": "coach",
+        "reason": "Iowa State kept showing up as a legitimate Final Four and title candidate because of its defense and balance.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Iowa_State_Cyclones_logo.svg/250px-Iowa_State_Cyclones_logo.svg.png",
+        "image_source": "Iowa State Cyclones men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "T. J. Otzelberger",
+        "popup_caption": "Iowa State kept showing up as a legitimate Final Four and title candidate because of its defense and balance."
+      }
+    },
+    {
+      "id": "matchup-057",
+      "round": 4,
+      "round_name": "Elite Eight",
+      "division": "East",
+      "matchup": "Duke vs UConn",
+      "predicted_winner": "Duke",
+      "win_probability": 0.54,
+      "prediction_analysis": "This is the real East coin flip. UConn is dangerous enough to win it, but Duke was still the overwhelming public East favorite and remains the cleaner bracket pick.",
+      "key_prediction_attribute": {
+        "name": "Jon Scheyer",
+        "type": "coach",
+        "reason": "No. 1 overall-seed profile, elite talent, and the highest title equity in the East.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Duke_Blue_Devils_basketball_mark.svg/250px-Duke_Blue_Devils_basketball_mark.svg.png",
+        "image_source": "Duke Blue Devils men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Jon Scheyer",
+        "popup_caption": "No. 1 overall-seed profile, elite talent, and the highest title equity in the East."
+      }
+    },
+    {
+      "id": "matchup-058",
+      "round": 4,
+      "round_name": "Elite Eight",
+      "division": "West",
+      "matchup": "Arizona vs Purdue",
+      "predicted_winner": "Arizona",
+      "win_probability": 0.56,
+      "prediction_analysis": "A lot of expert coverage pointed to Arizona over Purdue specifically, with Arizona framed as the more stable and balanced championship bet.",
+      "key_prediction_attribute": {
+        "name": "Jaden Bradley",
+        "type": "player",
+        "reason": "Arizona was one of the most stable title picks nationally, with balance, clutch shotmaking, and top-end guard play.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Arizona_Wildcats_logo.svg/330px-Arizona_Wildcats_logo.svg.png",
+        "image_source": "Arizona Wildcats men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Jaden Bradley",
+        "popup_caption": "Arizona was one of the most stable title picks nationally, with balance, clutch shotmaking, and top-end guard play."
+      }
+    },
+    {
+      "id": "matchup-059",
+      "round": 4,
+      "round_name": "Elite Eight",
+      "division": "South",
+      "matchup": "Florida vs Houston",
+      "predicted_winner": "Houston",
+      "win_probability": 0.52,
+      "prediction_analysis": "This is basically a title-game quality matchup. Slight lean Houston because several experts called for the Cougars to avenge last year's disappointment and their defense is the most translatable trait left in the region.",
+      "key_prediction_attribute": {
+        "name": "Kelvin Sampson",
+        "type": "coach",
+        "reason": "Houston's elite defense, veteran toughness, and late-game trustworthiness made the Cougars my champion.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Houston_Cougars_primary_logo.svg/250px-Houston_Cougars_primary_logo.svg.png",
+        "image_source": "Houston Cougars men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Kelvin Sampson",
+        "popup_caption": "Houston's elite defense, veteran toughness, and late-game trustworthiness made the Cougars my champion."
+      }
+    },
+    {
+      "id": "matchup-060",
+      "round": 4,
+      "round_name": "Elite Eight",
+      "division": "Midwest",
+      "matchup": "Michigan vs Iowa State",
+      "predicted_winner": "Iowa State",
+      "win_probability": 0.51,
+      "prediction_analysis": "Michigan can absolutely get through, but Iowa State kept showing up in title and Final Four cases, especially after Michigan's injury concerns.",
+      "key_prediction_attribute": {
+        "name": "T. J. Otzelberger",
+        "type": "coach",
+        "reason": "Iowa State kept showing up as a legitimate Final Four and title candidate because of its defense and balance.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Iowa_State_Cyclones_logo.svg/250px-Iowa_State_Cyclones_logo.svg.png",
+        "image_source": "Iowa State Cyclones men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "T. J. Otzelberger",
+        "popup_caption": "Iowa State kept showing up as a legitimate Final Four and title candidate because of its defense and balance."
+      }
+    },
+    {
+      "id": "matchup-061",
+      "round": 5,
+      "round_name": "Final Four",
+      "division": null,
+      "matchup": "Duke vs Arizona",
+      "predicted_winner": "Duke",
+      "win_probability": 0.53,
+      "prediction_analysis": "Massive heavyweight game. Arizona has one of the best balance profiles in the field, but Duke is still the best single-team bet if you're picking one champion path.",
+      "key_prediction_attribute": {
+        "name": "Jon Scheyer",
+        "type": "coach",
+        "reason": "No. 1 overall-seed profile, elite talent, and the highest title equity in the East.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Duke_Blue_Devils_basketball_mark.svg/250px-Duke_Blue_Devils_basketball_mark.svg.png",
+        "image_source": "Duke Blue Devils men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Jon Scheyer",
+        "popup_caption": "No. 1 overall-seed profile, elite talent, and the highest title equity in the East."
+      }
+    },
+    {
+      "id": "matchup-062",
+      "round": 5,
+      "round_name": "Final Four",
+      "division": null,
+      "matchup": "Houston vs Iowa State",
+      "predicted_winner": "Houston",
+      "win_probability": 0.54,
+      "prediction_analysis": "Defensive rock fight. Small lean Houston because this exact type of game tends to be where the Cougars are most trustworthy.",
+      "key_prediction_attribute": {
+        "name": "Kelvin Sampson",
+        "type": "coach",
+        "reason": "Houston's elite defense, veteran toughness, and late-game trustworthiness made the Cougars my champion.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Houston_Cougars_primary_logo.svg/250px-Houston_Cougars_primary_logo.svg.png",
+        "image_source": "Houston Cougars men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Kelvin Sampson",
+        "popup_caption": "Houston's elite defense, veteran toughness, and late-game trustworthiness made the Cougars my champion."
+      }
+    },
+    {
+      "id": "matchup-063",
+      "round": 6,
+      "round_name": "National Championship",
+      "division": null,
+      "matchup": "Duke vs Houston",
+      "predicted_winner": "Houston",
+      "win_probability": 0.52,
+      "prediction_analysis": "If you're trying to avoid the most obvious chalk title while still staying grounded, Houston is a strong bracket winner pick. The Cougars have elite defense, veteran toughness, and plenty of expert support as a championship path.",
+      "key_prediction_attribute": {
+        "name": "Kelvin Sampson",
+        "type": "coach",
+        "reason": "Houston's elite defense, veteran toughness, and late-game trustworthiness made the Cougars my champion.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Houston_Cougars_primary_logo.svg/250px-Houston_Cougars_primary_logo.svg.png",
+        "image_source": "Houston Cougars men's basketball"
+      },
+      "website_notes": {
+        "confidence": "low",
+        "popup_title": "Kelvin Sampson",
+        "popup_caption": "Houston's elite defense, veteran toughness, and late-game trustworthiness made the Cougars my champion."
+      }
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050816" />
+  <title>March Madness 2025 — Bracket Atlas</title>
+  <meta name="description" content="A premium, dark, zoomable March Madness bracket experience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg-orb bg-orb--a"></div>
+  <div class="bg-orb bg-orb--b"></div>
+  <div class="bg-grid"></div>
+  <div class="noise"></div>
+
+  <div class="app">
+    <header class="hero glass">
+      <div class="hero__copy">
+        <p class="eyebrow">2025 March Madness • Premium Bracket Atlas</p>
+        <h1>See the whole tournament first. Then dive all the way down.</h1>
+        <p class="hero__lede">
+          Built as a mobile-first, dark mode bracket experience with smooth focus states, cinematic zoom,
+          matchup detail sheets, and a full tournament overview that actually feels like a bracket.
+        </p>
+      </div>
+
+      <div class="hero__rail">
+        <div class="stat-card">
+          <span>Champion</span>
+          <strong id="championName">Houston</strong>
+        </div>
+        <div class="stat-card">
+          <span>Games picked</span>
+          <strong id="gamesCount">63</strong>
+        </div>
+        <div class="stat-card">
+          <span>Interaction</span>
+          <strong>Zoom • Pan • Tap</strong>
+        </div>
+      </div>
+    </header>
+
+    <section class="control-bar glass">
+      <div class="control-bar__left">
+        <button id="resetViewBtn" class="btn btn--primary" type="button">Full bracket</button>
+        <button id="fitChampionBtn" class="btn" type="button">Champion path</button>
+        <button id="fitFinalBtn" class="btn" type="button">Final Four</button>
+      </div>
+      <div class="legend" aria-label="Confidence legend">
+        <span class="legend__title">Confidence</span>
+        <span class="legend-pill legend-pill--vh">Very high</span>
+        <span class="legend-pill legend-pill--h">High</span>
+        <span class="legend-pill legend-pill--m">Medium</span>
+        <span class="legend-pill legend-pill--l">Low</span>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <aside class="sidebar glass">
+        <div class="sidebar__section">
+          <p class="sidebar__label">Quick focus</p>
+          <div id="regionButtons" class="region-buttons"></div>
+        </div>
+
+        <div class="sidebar__section">
+          <p class="sidebar__label">Rounds</p>
+          <div id="roundButtons" class="round-buttons"></div>
+        </div>
+
+        <div class="sidebar__section">
+          <p class="sidebar__label">Champion run</p>
+          <div id="championPath" class="champion-path"></div>
+        </div>
+
+        <div class="sidebar__section sidebar__footer">
+          <p>
+            This bracket experience was created by OpenClaw using the GPT 5.4 model made by
+            <a href="https://agigui.com" target="_blank" rel="noreferrer">agigui.com</a> :)
+          </p>
+        </div>
+      </aside>
+
+      <main class="canvas-panel glass">
+        <div class="canvas-toolbar">
+          <div>
+            <p class="eyebrow">Interactive bracket</p>
+            <h2 id="viewLabel">Full bracket overview</h2>
+            <p class="toolbar-subtitle">Tap any region or game card. Drag to pan. Use the minimap to jump.</p>
+          </div>
+          <div class="zoom-controls">
+            <button id="zoomOutBtn" class="icon-btn" type="button" aria-label="Zoom out">−</button>
+            <button id="zoomInBtn" class="icon-btn" type="button" aria-label="Zoom in">+</button>
+          </div>
+        </div>
+
+        <div id="viewport" class="viewport">
+          <div id="bracketScene" class="bracket-scene">
+            <svg id="connectorLayer" class="connector-layer" aria-hidden="true"></svg>
+            <div id="nodesLayer" class="nodes-layer"></div>
+          </div>
+
+          <div class="minimap glass">
+            <div class="minimap__header">
+              <span>Map</span>
+              <button id="fitMapBtn" class="minimap__fit" type="button">Fit</button>
+            </div>
+            <svg id="minimapSvg" viewBox="0 0 1800 1320" class="minimap__svg" aria-label="Bracket minimap"></svg>
+          </div>
+        </div>
+      </main>
+    </section>
+  </div>
+
+  <section id="detailSheet" class="detail-sheet" aria-hidden="true">
+    <div class="detail-sheet__backdrop"></div>
+    <div class="detail-sheet__panel glass">
+      <button id="closeDetailBtn" class="detail-sheet__close" type="button" aria-label="Close details">×</button>
+      <p id="detailRound" class="eyebrow"></p>
+      <h3 id="detailMatchup"></h3>
+
+      <div class="detail-pills">
+        <span id="detailWinner" class="detail-pill detail-pill--winner"></span>
+        <span id="detailProbability" class="detail-pill"></span>
+        <span id="detailConfidence" class="detail-pill"></span>
+      </div>
+
+      <p id="detailAnalysis" class="detail-analysis"></p>
+
+      <div class="detail-spotlight">
+        <img id="detailImage" alt="" />
+        <div>
+          <p class="eyebrow">Key factor</p>
+          <h4 id="detailTitle"></h4>
+          <p id="detailCaption"></p>
+        </div>
+      </div>
+
+      <div class="detail-meta-grid">
+        <div class="detail-meta-card">
+          <span class="eyebrow">Prediction note</span>
+          <p id="detailReason"></p>
+        </div>
+        <div class="detail-meta-card">
+          <span class="eyebrow">Source label</span>
+          <p id="detailSource"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
