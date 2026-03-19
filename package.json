@@ -1,0 +1,9 @@
+{
+  "name": "marchmadness-bracket-atlas",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Premium dark-themed March Madness 2025 bracket experience",
+  "scripts": {
+    "start": "npx serve -s . -l $PORT"
+  }
+}
